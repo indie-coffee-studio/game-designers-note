@@ -14,9 +14,10 @@ import {
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { flattenTree, buildTree } from './treeUtils.js';
+import { EditPageModal } from './EditPageModal.jsx';
 import styles from './NavTreeEditor.module.css';
 
-// ─── SortableItem ────────────────────────────────────────────────────────────
+// 闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸?SortableItem 闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕
 
 function SortableItem({ item, isSelected, isExpanded, onSelect, onToggle, onContextMenu }) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: item.id });
@@ -49,14 +50,14 @@ function SortableItem({ item, isSelected, isExpanded, onSelect, onToggle, onCont
           {...listeners}
           title="Drag to reorder"
         >
-          ⠿
+          ::
         </span>
         {hasChildren && (
           <span
             className={styles.toggle}
             onClick={(e) => { e.stopPropagation(); onToggle(item.id); }}
           >
-            {isExpanded ? '▾' : '▸'}
+            {isExpanded ? '-' : '+'}
           </span>
         )}
         {!hasChildren && <span className={styles.togglePlaceholder} />}
@@ -66,14 +67,15 @@ function SortableItem({ item, isSelected, isExpanded, onSelect, onToggle, onCont
   );
 }
 
-// ─── Context menu ────────────────────────────────────────────────────────────
+// 闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸?Context menu 闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕
 
-function ContextMenu({ x, y, item, onRename, onDelete, onAddChild, onClose }) {
+function ContextMenu({ x, y, item, onEdit, onRename, onDelete, onAddChild, onClose }) {
   return (
     <>
       <div className={styles.overlay} onClick={onClose} />
       <div className={styles.contextMenu} style={{ top: y, left: x }}>
-        <button onClick={() => { onRename(item); onClose(); }}>Rename</button>
+        <button onClick={() => { onEdit(item); onClose(); }}>Edit page info</button>
+        <button onClick={() => { onRename(item); onClose(); }}>Rename label</button>
         <button onClick={() => { onAddChild(item); onClose(); }}>New child page</button>
         <button className={styles.danger} onClick={() => { onDelete(item); onClose(); }}>Delete</button>
       </div>
@@ -81,7 +83,7 @@ function ContextMenu({ x, y, item, onRename, onDelete, onAddChild, onClose }) {
   );
 }
 
-// ─── NavTreeEditor ───────────────────────────────────────────────────────────
+// 闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸?NavTreeEditor 闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸?
 
 function getAncestorIds(nodes, targetId, path = []) {
   for (const node of nodes) {
@@ -98,6 +100,7 @@ export function NavTreeEditor({ navData, selectedId, onSelect, onNavChange, onNe
   const [expandedIds, setExpandedIds] = useState(() => new Set(['gameplay-design', 'game-experience', 'game-development', 'level-design', 'narrative-design', 'appendix']));
   const [contextMenu, setContextMenu] = useState(null);
   const [activeId, setActiveId] = useState(null);
+  const [editItem, setEditItem] = useState(null);
 
   const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 5 } }));
 
@@ -132,14 +135,14 @@ export function NavTreeEditor({ navData, selectedId, onSelect, onNavChange, onNe
 
     // DFS traversal respecting expanded state
     const result = [];
-    function visit(nodes, depth) {
+    function visit(nodes, depth, parentId = null) {
       for (const node of nodes) {
         const hasChildren = !!(node.children?.length);
-        result.push({ ...node, depth, _hasChildren: hasChildren, children: undefined });
-        if (hasChildren && expandedIds.has(node.id)) visit(node.children, depth + 1);
+        result.push({ ...node, depth, parentId, _hasChildren: hasChildren, children: undefined });
+        if (hasChildren && expandedIds.has(node.id)) visit(node.children, depth + 1, node.id);
       }
     }
-    if (navData) visit(navData, 0);
+    if (navData) visit(navData, 0, null);
     return { flatItems: result, childrenMap };
   }, [navData, expandedIds]);
 
@@ -166,6 +169,15 @@ export function NavTreeEditor({ navData, selectedId, onSelect, onNavChange, onNe
     onNavChange(update(navData));
   }, [navData, onNavChange]);
 
+  const handleEdit = useCallback((item) => setEditItem(item), []);
+
+  const handlePageUpdated = useCallback((newId) => {
+    setEditItem(null);
+    fetch('/api/editor/nav').then((r) => r.json()).then((data) => {
+      onNavChange(data);
+      onSelect(newId);
+    });
+  }, [onNavChange, onSelect]);
   const handleDelete = useCallback((item) => {
     if (!window.confirm(`Delete "${item.label}"? This will also delete the corresponding JSX file.`)) return;
     fetch(`/api/editor/page/${item.id}`, { method: 'DELETE' })
@@ -180,7 +192,7 @@ export function NavTreeEditor({ navData, selectedId, onSelect, onNavChange, onNe
       });
   }, [onNavChange]);
 
-  // ─── DnD ──────────────────────────────────────────────────────────────────
+  // 闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸?DnD 闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜鹃梺鍐插帨閸嬫捇鏌嶉崗澶婁壕闂佸啿鍘滈崑鎾绘煃閸忓浜?
 
   const handleDragStart = useCallback(({ active }) => setActiveId(active.id), []);
 
@@ -208,13 +220,13 @@ export function NavTreeEditor({ navData, selectedId, onSelect, onNavChange, onNe
 
   const activeItem = flatItems.find((i) => i.id === activeId);
 
-  if (!navData) return <div className={styles.loading}>Loading…</div>;
+  if (!navData) return <div className={styles.loading}>Loading...</div>;
 
   return (
     <div className={styles.navTree}>
       <div className={styles.header}>
         <span className={styles.headerTitle}>Pages</span>
-        <button className={styles.newPageBtn} onClick={() => onNewPage(null)} title="New page">＋</button>
+        <button className={styles.newPageBtn} onClick={() => onNewPage(null)} title="New page">+</button>
       </div>
 
       <div className={styles.treeBody}>
@@ -242,7 +254,7 @@ export function NavTreeEditor({ navData, selectedId, onSelect, onNavChange, onNe
             {activeItem && (
               <div className={`${styles.item} ${styles.dragging}`}>
                 <div className={styles.row} style={{ paddingLeft: `${8 + activeItem.depth * 14}px` }}>
-                  <span className={styles.handle}>⠿</span>
+                  <span className={styles.handle}>::</span>
                   <span className={styles.label}>{activeItem.label}</span>
                 </div>
               </div>
@@ -256,10 +268,19 @@ export function NavTreeEditor({ navData, selectedId, onSelect, onNavChange, onNe
           x={contextMenu.x}
           y={contextMenu.y}
           item={contextMenu.item}
+          onEdit={handleEdit}
           onRename={handleRename}
           onDelete={handleDelete}
           onAddChild={(item) => onNewPage(item.id)}
           onClose={() => setContextMenu(null)}
+        />
+      )}
+      {editItem && (
+        <EditPageModal
+          navData={navData}
+          item={editItem}
+          onClose={() => setEditItem(null)}
+          onUpdated={handlePageUpdated}
         />
       )}
     </div>

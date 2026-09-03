@@ -309,7 +309,21 @@
             "id": "randomness",
             "label": "Randomness",
             "path": "gameplay-design/specific-systems/supporting-systems/randomness",
-            "icon": "shuffle"
+            "icon": "shuffle",
+            "children": [
+              {
+                "id": "input-randomness",
+                "label": "Input Randomness",
+                "path": "gameplay-design/specific-systems/supporting-systems/randomness/input-randomness",
+                "icon": "shuffle"
+              },
+              {
+                "id": "output-randomness",
+                "label": "Output Randomness",
+                "path": "gameplay-design/specific-systems/supporting-systems/randomness/output-randomness",
+                "icon": "dice"
+              }
+            ]
           }
         ]
       }
@@ -796,12 +810,6 @@
         "path": "level-design/reward-and-exploration",
         "children": [
           {
-            "id": "collectibles",
-            "label": "Collectibles",
-            "path": "level-design/reward-and-exploration/collectibles",
-            "icon": "coins"
-          },
-          {
             "id": "lock-and-key",
             "label": "Lock And Key",
             "path": "level-design/reward-and-exploration/lock-and-key",
@@ -811,7 +819,14 @@
             "id": "rewards",
             "label": "Rewards",
             "path": "level-design/reward-and-exploration/rewards",
-            "icon": "gift"
+            "icon": "gift",
+            "children": [
+              {
+                "id": "how-to-display-rewards",
+                "label": "How to display rewards",
+                "path": "level-design/reward-and-exploration/rewards/how-to-display-rewards"
+              }
+            ]
           }
         ],
         "icon": "gem"

@@ -1,0 +1,1 @@
+import{C as e,l as t,n,t as r,u as i,x as a}from"./index-Y1lg2CD1.js";e();var o=a();function s({go:e}){return(0,o.jsxs)(`div`,{children:[(0,o.jsx)(n,{auto:!0,go:e}),(0,o.jsx)(t,{children:`Submission`}),(0,o.jsx)(i,{id:`numbers`,children:`Numbers`}),(0,o.jsx)(r,{children:`Satisfaction from numbers going up. Think incremental games or Balatro.`})]})}export{s as default};

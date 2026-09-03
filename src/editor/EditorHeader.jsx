@@ -1,12 +1,13 @@
+import { idToPath } from '@/config/nav.js';
 import styles from './EditorHeader.module.css';
 
-export function EditorHeader({ isDirty, onSaveNav }) {
+export function EditorHeader({ isDirty, onSaveNav, pageId }) {
   return (
     <header className={styles.header}>
       <div className={styles.brand}>
-        <span className={styles.icon}>✏</span>
+        <span className={styles.icon}>OK</span>
         <span className={styles.title}>Editor</span>
-        {isDirty && <span className={styles.dirty}>● Unsaved</span>}
+        {isDirty && <span className={styles.dirty}>Unsaved</span>}
       </div>
       <div className={styles.actions}>
         <button
@@ -17,12 +18,12 @@ export function EditorHeader({ isDirty, onSaveNav }) {
           Save Nav
         </button>
         <a
-          href="/"
+          href={idToPath[pageId] || '/'}
           className={styles.siteLink}
           target="_blank"
           rel="noreferrer"
         >
-          ← View Site
+          View Site
         </a>
       </div>
     </header>

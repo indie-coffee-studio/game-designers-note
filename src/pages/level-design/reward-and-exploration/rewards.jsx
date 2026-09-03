@@ -1,5 +1,5 @@
 import React from 'react';
-import { Blockquote, Breadcrumb, H1, H2 } from '@/components/ui.jsx';
+import { Blockquote, Breadcrumb, CrossLink, H1, H2, InternalLink, LI, UL } from '@/components/ui.jsx';
 
 export default function Page({ go }) {
   return (
@@ -9,11 +9,18 @@ export default function Page({ go }) {
       <H2 id="reward-expectation">Reward Expectation</H2>
       <Blockquote>Mismatch between expectation and reward reduces motivation to explore. E.g. mushrooms in Elden Ring</Blockquote>
       <H2 id="rewards-as-a-hint">Rewards as a hint</H2>
-      <Blockquote>Small coin → big coin → hidden path</Blockquote>
+      <Blockquote>Small coin -&gt; big coin -&gt; hidden path</Blockquote>
       <H2 id="reward-types">Reward types</H2>
-      <Blockquote>Collectibles / resources / clues (notes, treasure maps)</Blockquote>
-      <H2 id="reward-as-endpoint">Reward as endpoint</H2>
-      <Blockquote>Reward symbolizes destination; if players reach a dead end and find nothing, they may doubt if there is more ahead. BG3's survival check chest is a fair approach to show that its just a dead end.</Blockquote>
+      <Blockquote>
+        <UL>
+          <LI>Collectibles </LI>
+          <LI>Resources</LI>
+          <LI>Clues (notes, treasure maps)</LI>
+        </UL>
+      </Blockquote>
+      <H2 id="dont-let-finding-rewards-be-a-task"><CrossLink pageId="rewarding-exploration" anchor="dont-let-finding-rewards-be-a-task" go={go}>Don't let finding rewards be a task</CrossLink></H2>
+      <Blockquote>Korok mask, helps you know where has a collectible, which is great. But showing the total collectibles of 1000 Koroks doesn't motivate players at all.</Blockquote>
+      <H2><InternalLink id="how-to-display-rewards" go={go}>How to Display Rewards</InternalLink></H2>
     </div>
   );
 }

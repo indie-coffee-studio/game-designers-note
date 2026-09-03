@@ -1,0 +1,1 @@
+import{C as e,h as t,l as n,n as r,v as i,x as a}from"./index-Y1lg2CD1.js";e();var o=a();function s({go:e}){return(0,o.jsxs)(`div`,{children:[(0,o.jsx)(r,{auto:!0,go:e}),(0,o.jsx)(n,{children:`Physical`}),(0,o.jsxs)(i,{children:[(0,o.jsx)(t,{children:`Timing`}),(0,o.jsx)(t,{children:`Precision`}),(0,o.jsx)(t,{children:`Amount of inputs`})]})]})}export{s as default};

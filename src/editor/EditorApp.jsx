@@ -59,7 +59,7 @@ function EditorMain() {
 
   return (
     <div className={styles.editorRoot}>
-      <EditorHeader isDirty={isDirty} onSaveNav={handleSaveNav} />
+      <EditorHeader isDirty={isDirty} onSaveNav={handleSaveNav} pageId={pageId} />
 
       <div className={styles.body}>
         <NavTreeEditor

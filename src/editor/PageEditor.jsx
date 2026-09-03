@@ -48,7 +48,7 @@ const AnnotationExtension = Mark.create({
   },
 });
 
-// Non-editable placeholder for native HTML elements (table, etc.) — round-trips without data loss
+// Non-editable placeholder for native HTML elements (table, etc.) 閳?round-trips without data loss
 const NativeHtmlExtension = Node.create({
   name: 'nativeHtml',
   group: 'block',
@@ -68,7 +68,7 @@ const NativeHtmlExtension = Node.create({
       'data-native-html': 'true',
       style: 'background:#f5f0eb;border-left:3px solid #c8b090;padding:6px 12px;color:#999;font-size:12px;font-family:monospace;cursor:default',
       contenteditable: 'false',
-    }), `[Native <${tag}> — read-only, preserved on save]`];
+    }), `[Native <${tag}> 閳?read-only, preserved on save]`];
   },
 });
 
@@ -105,7 +105,7 @@ function imageFileFromTransfer(dataTransfer) {
   return Array.from(dataTransfer?.files || []).find((file) => file.type.startsWith('image/'));
 }
 
-// ─── Link popup ──────────────────────────────────────────────────────────────
+// 閳光偓閳光偓閳光偓 Link popup 閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓
 
 function LinkPopup({ popup, editor, navigate, onClose }) {
   const handleVisit = () => {
@@ -137,14 +137,14 @@ function LinkPopup({ popup, editor, navigate, onClose }) {
       <div className={styles.popupOverlay} onClick={onClose} />
       <div className={styles.linkPopup} style={{ left: popup.x, top: popup.y }}>
         <span className={styles.popupLabel}>{popup.id ?? popup.href}</span>
-        <button onClick={handleVisit}>Visit ↗</button>
-        <button onClick={handleEdit}>Edit ✎</button>
+        <button onClick={handleVisit}>Visit</button>
+        <button onClick={handleEdit}>Edit</button>
       </div>
     </>
   );
 }
 
-// ─── PageEditor ──────────────────────────────────────────────────────────────
+// 閳光偓閳光偓閳光偓 PageEditor 閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓
 
 export function PageEditor({ pageId, onDirty }) {
   const navigate = useNavigate();
@@ -247,7 +247,17 @@ export function PageEditor({ pageId, onDirty }) {
 
   // Show link popup on click; dismiss on outside click
   const handleContentClick = useCallback((e) => {
-    const il = e.target.closest('[data-internal-link]');
+    const annotation = e.target.closest('[data-annotation]');
+    if (annotation) {
+      e.preventDefault();
+      const current = annotation.getAttribute('data-annotation') ?? '';
+      const note = window.prompt('Annotation note', current);
+      if (note === null) return;
+      const chain = editor.chain().focus().extendMarkRange('annotation');
+      if (note === '') chain.unsetMark('annotation').run();
+      else chain.setMark('annotation', { note }).run();
+      return;
+    }    const il = e.target.closest('[data-internal-link]');
     if (il) {
       e.preventDefault();
       const id = il.getAttribute('data-internal-link');
@@ -266,22 +276,22 @@ export function PageEditor({ pageId, onDirty }) {
     setLinkPopup(null);
   }, []);
 
-  if (!pageId) return <div className={styles.empty}>← Select a page from the left to start editing</div>;
+  if (!pageId) return <div className={styles.empty}>Select a page from the left to start editing</div>;
 
   return (
     <div className={styles.pageEditor}>
       <div className={styles.topBar}>
         <EditorToolbar editor={editor} onInsertFigure={handleInsertFigure} />
         <div className={styles.saveArea}>
-          {saveStatus === 'saved' && <span className={styles.saved}>Saved ✓</span>}
-          {saveStatus === 'error' && <span className={styles.saveErr}>Save failed ✕</span>}
+          {saveStatus === 'saved' && <span className={styles.saved}>Saved</span>}
+          {saveStatus === 'error' && <span className={styles.saveErr}>Save failed</span>}
           <button className={styles.saveBtn} onClick={handleSave} disabled={saving}>
-            {saving ? 'Saving…' : 'Save'}
+            {saving ? 'Saving...' : 'Save'}
           </button>
         </div>
       </div>
 
-      {loading && <div className={styles.loading}>Loading…</div>}
+      {loading && <div className={styles.loading}>Loading...</div>}
       {error && <div className={styles.error}>Error: {error}</div>}
       {!loading && !error && (
         <EditorContent editor={editor} className={styles.editorContent} onClick={handleContentClick} />

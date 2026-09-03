@@ -14,9 +14,9 @@ const ToolBtn = ({ active, title, onClick, children }) => (
 const Sep = () => <span className={styles.sep} />;
 
 const CALLOUT_TYPES = [
-  { type: 'info',  icon: 'ℹ' },
-  { type: 'tip',   icon: '✦' },
-  { type: 'alarm', icon: '⚠' },
+  { type: 'info',  icon: 'i' },
+  { type: 'tip',   icon: 't' },
+  { type: 'alarm', icon: '!' },
 ];
 
 // Floating panel for choosing link type, anchored below the trigger button
@@ -25,8 +25,8 @@ function LinkTypePopup({ anchor, onExternal, onInternal, onClose }) {
     <>
       <div className={styles.popupOverlay} onClick={onClose} />
       <div className={styles.linkPopup} style={{ left: anchor.x, top: anchor.y }}>
-        <button onClick={onExternal}>External 🔗</button>
-        <button onClick={onInternal}>Internal ⌁</button>
+        <button onClick={onExternal}>External</button>
+        <button onClick={onInternal}>Internal</button>
       </div>
     </>
   );
@@ -51,6 +51,13 @@ export function EditorToolbar({ editor, onInsertFigure }) {
 
   const isLinkActive = editor.isActive('link') || editor.isActive('internalLink');
 
+  const handleAnnotation = () => {
+    const current = editor.getAttributes('annotation').note ?? '';
+    const note = window.prompt('Annotation note', current);
+    if (note === null) return;
+    if (note === '') chain().unsetMark('annotation').run();
+    else chain().setMark('annotation', { note }).run();
+  };
   const handleLinkBtn = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setLinkAnchor({ x: rect.left, y: rect.bottom + 4 });
@@ -86,6 +93,7 @@ export function EditorToolbar({ editor, onInsertFigure }) {
 
       <Sep />
 
+      <ToolBtn title="Annotation" active={editor.isActive('annotation')} onClick={handleAnnotation}>Note</ToolBtn>
       <ToolBtn title="Heading 1" active={editor.isActive('heading', { level: 1 })} onClick={() => chain().toggleHeading({ level: 1 }).run()}>H1</ToolBtn>
       <ToolBtn title="Heading 2" active={editor.isActive('heading', { level: 2 })} onClick={() => chain().toggleHeading({ level: 2 }).run()}>H2</ToolBtn>
       <ToolBtn title="Heading 3" active={editor.isActive('heading', { level: 3 })} onClick={() => chain().toggleHeading({ level: 3 }).run()}>H3</ToolBtn>
@@ -93,9 +101,9 @@ export function EditorToolbar({ editor, onInsertFigure }) {
 
       <Sep />
 
-      <ToolBtn title="Bullet list" active={editor.isActive('bulletList')} onClick={() => chain().toggleBulletList().run()}>≡</ToolBtn>
+      <ToolBtn title="Bullet list" active={editor.isActive('bulletList')} onClick={() => chain().toggleBulletList().run()}>UL</ToolBtn>
       <ToolBtn title="Ordered list" active={editor.isActive('orderedList')} onClick={() => chain().toggleOrderedList().run()}>1.</ToolBtn>
-      <ToolBtn title="Task list" active={editor.isActive('taskList')} onClick={() => chain().toggleTaskList().run()}>☑</ToolBtn>
+      <ToolBtn title="Task list" active={editor.isActive('taskList')} onClick={() => chain().toggleTaskList().run()}>Task</ToolBtn>
 
       <Sep />
 
@@ -114,18 +122,18 @@ export function EditorToolbar({ editor, onInsertFigure }) {
           {icon}
         </ToolBtn>
       ))}
-      <ToolBtn title="Insert figure" onClick={onInsertFigure}>⬜</ToolBtn>
-      <ToolBtn title="Insert cards grid" onClick={() => editor.commands.insertCardsGrid()}>📇</ToolBtn>
+      <ToolBtn title="Insert figure" onClick={onInsertFigure}>Figure</ToolBtn>
+      <ToolBtn title="Insert cards grid" onClick={() => editor.commands.insertCardsGrid()}>Cards</ToolBtn>
 
       <Sep />
 
-      <ToolBtn title="Divider" onClick={() => chain().setHorizontalRule().run()}>―</ToolBtn>
-      <ToolBtn title="Link" active={isLinkActive} onClick={handleLinkBtn}>🔗</ToolBtn>
+      <ToolBtn title="Divider" onClick={() => chain().setHorizontalRule().run()}>---</ToolBtn>
+      <ToolBtn title="Link" active={isLinkActive} onClick={handleLinkBtn}>Link</ToolBtn>
 
       <Sep />
 
-      <ToolBtn title="Undo" onClick={() => chain().undo().run()}>↩</ToolBtn>
-      <ToolBtn title="Redo" onClick={() => chain().redo().run()}>↪</ToolBtn>
+      <ToolBtn title="Undo" onClick={() => chain().undo().run()}>Undo</ToolBtn>
+      <ToolBtn title="Redo" onClick={() => chain().redo().run()}>Redo</ToolBtn>
 
       {linkAnchor && (
         <LinkTypePopup

@@ -9,7 +9,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PAGES_DIR = path.join(ROOT, 'src', 'pages');
 const NAV_DATA_PATH = path.join(ROOT, 'src', 'config', 'nav-data.json');
 
-// ─── Helpers ─────────────────────────────────────────────────────────────────
+// 閳光偓閳光偓閳光偓 Helpers 閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓
 
 async function readNav() {
   return JSON.parse(await fs.readFile(NAV_DATA_PATH, 'utf-8'));
@@ -40,7 +40,7 @@ function pageFilePath(navPath) {
   return path.join(PAGES_DIR, navPath + '.jsx');
 }
 
-// ─── Handlers ─────────────────────────────────────────────────────────────────
+// 閳光偓閳光偓閳光偓 Handlers 閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓
 
 async function handleGetNav(_, res) {
   const data = await readNav();
@@ -130,6 +130,83 @@ async function handleCreatePage(req, res) {
   respond(res, { ok: true });
 }
 
+async function collectJsxFiles(dir) {
+  const files = [];
+  const entries = await fs.readdir(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) files.push(...await collectJsxFiles(full));
+    else if (entry.isFile() && entry.name.endsWith('.jsx')) files.push(full);
+  }
+  return files;
+}
+
+function hasDescendant(node, id) {
+  return !!node.children?.some((child) => child.id === id || hasDescendant(child, id));
+}
+
+function updatePageReferences(source, oldId, newId) {
+  const escaped = oldId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return source
+    .replace(new RegExp(`(<InternalLink\\b[^>]*\\bid=")${escaped}(")`, 'g'), `$1${newId}$2`)
+    .replace(new RegExp(`(<CrossLink\\b[^>]*\\bpageId=")${escaped}(")`, 'g'), `$1${newId}$2`);
+}
+
+async function movePageFiles(oldPath, newPath) {
+  const oldFile = pageFilePath(oldPath);
+  const newFile = pageFilePath(newPath);
+  await fs.mkdir(path.dirname(newFile), { recursive: true });
+  try { await fs.rename(oldFile, newFile); } catch (err) {
+    if (err.code !== 'ENOENT') throw err;
+  }
+  const oldDir = path.join(PAGES_DIR, oldPath);
+  const newDir = path.join(PAGES_DIR, newPath);
+  try {
+    await fs.mkdir(path.dirname(newDir), { recursive: true });
+    await fs.rename(oldDir, newDir);
+  } catch (err) {
+    if (err.code !== 'ENOENT') throw err;
+  }
+}
+
+async function handlePatchPage(req, res, server) {
+  const oldId = req.editorId;
+  const { id: newId, label, parentId, icon } = await readBody(req);
+  if (!newId || !label?.trim()) return respond(res, { error: 'id and label required' }, 400);
+  if (newId === 'home') return respond(res, { error: 'home cannot be renamed' }, 400);
+
+  const navData = await readNav();
+  const node = findNodeById(navData, oldId);
+  if (!node?.path) return respond(res, { error: 'page not found' }, 404);
+  if (newId !== oldId && findNodeById(navData, newId)) return respond(res, { error: 'id already exists' }, 409);
+  if (parentId === oldId || hasDescendant(node, parentId)) return respond(res, { error: 'cannot move a page inside itself' }, 400);
+
+  const parent = parentId ? findNodeById(navData, parentId) : null;
+  if (parentId && !parent) return respond(res, { error: 'parent not found' }, 400);
+
+  const oldPath = node.path;
+  const newPath = parent ? `${parent.path}/${newId}` : newId;
+  if (oldPath !== newPath) await movePageFiles(oldPath, newPath);
+
+  const replacement = { ...node, id: newId, label: label.trim(), path: newPath };
+  if (icon?.trim()) replacement.icon = icon.trim();
+  else delete replacement.icon;
+  removeNodeById(navData, oldId);
+  insertNode(navData, parentId || null, replacement);
+  await writeNav(navData);
+
+  if (newId !== oldId) {
+    const files = await collectJsxFiles(PAGES_DIR);
+    await Promise.all(files.map(async (file) => {
+      const source = await fs.readFile(file, 'utf-8');
+      const updated = updatePageReferences(source, oldId, newId);
+      if (updated !== source) await fs.writeFile(file, updated, 'utf-8');
+    }));
+  }
+
+  server.watcher.emit('change', pageFilePath(newPath));
+  respond(res, { ok: true, id: newId });
+}
 async function handleDeletePage(req, res) {
   const id = req.editorId;
   const navData = await readNav();
@@ -212,7 +289,7 @@ async function handleRenameImage(req, res) {
   respond(res, { ok: true, name: newFileName, src: `/images/${newFileName}` });
 }
 
-// ─── Template ────────────────────────────────────────────────────────────────
+// 閳光偓閳光偓閳光偓 Template 閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓
 
 function emptyPageJsx(label) {
   const escapedLabel = label.replace(/'/g, "\\'");
@@ -230,7 +307,7 @@ export default function Page({ go }) {
 `;
 }
 
-// ─── Plugin export ────────────────────────────────────────────────────────────
+// 閳光偓閳光偓閳光偓 Plugin export 閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓
 
 export function editorPlugin() {
   return {
@@ -251,6 +328,7 @@ export function editorPlugin() {
           'PUT nav':    handlePutNav,
           'GET page':   handleGetPage,
           'PUT page':   handlePutPage,
+          'PATCH page': handlePatchPage,
           'POST page':  handleCreatePage,
           'DELETE page': handleDeletePage,
           'GET images': handleListImages,
