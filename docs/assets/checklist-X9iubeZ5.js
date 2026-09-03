@@ -1,1 +1,0 @@
-import{C as e,a as t,o as n,r,u as i,x as a}from"./index-ChliXUG1.js";e();var o=a();function s({go:e}){return(0,o.jsxs)(`div`,{children:[(0,o.jsx)(r,{auto:!0,go:e}),(0,o.jsx)(i,{children:`Checklist`}),(0,o.jsxs)(n,{children:[(0,o.jsx)(t,{children:`Target Audience`}),(0,o.jsx)(t,{children:`Game Length`})]})]})}export{s as default};

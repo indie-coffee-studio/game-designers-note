@@ -55,6 +55,19 @@ async function handlePutNav(req, res) {
 
 async function handleGetPage(req, res) {
   const id = req.editorId;
+  
+  // Special handling for home page
+  if (id === 'home') {
+    try {
+      const contentPath = path.join(ROOT, 'src', 'config', 'home-content.json');
+      const doc = JSON.parse(await fs.readFile(contentPath, 'utf-8'));
+      respond(res, { ok: true, doc, path: 'home', label: 'Home' });
+    } catch {
+      respond(res, { error: 'home content not found' }, 404);
+    }
+    return;
+  }
+
   const navData = await readNav();
   const node = findNodeById(navData, id);
   if (!node?.path) return respond(res, { error: 'page not found' }, 404);
@@ -72,6 +85,15 @@ async function handleGetPage(req, res) {
 async function handlePutPage(req, res, server) {
   const id = req.editorId;
   const body = await readBody(req);
+
+  // Special handling for home page
+  if (id === 'home') {
+    const contentPath = path.join(ROOT, 'src', 'config', 'home-content.json');
+    await fs.writeFile(contentPath, JSON.stringify(body.doc, null, 2), 'utf-8');
+    respond(res, { ok: true });
+    return;
+  }
+
   const navData = await readNav();
   const node = findNodeById(navData, id);
   if (!node?.path) return respond(res, { error: 'page not found' }, 404);
@@ -136,6 +158,60 @@ async function handleListImages(_, res) {
   }
 }
 
+function safeImageName(name) {
+  const extension = path.extname(name).toLowerCase();
+  const stem = path.basename(name, extension)
+    .replace(/[<>:"/\\|?*\u0000-\u001F]+/g, '-')
+    .replace(/^-+|-+$/g, '') || 'image';
+  return `${stem}${extension}`;
+}
+
+function readMultipartFile(req) {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    req.on('data', (chunk) => chunks.push(chunk));
+    req.on('end', () => {
+      const body = Buffer.concat(chunks);
+      const boundary = (req.headers['content-type'] || '').match(/boundary=([^;]+)/)?.[1];
+      if (!boundary) return reject(new Error('multipart boundary missing'));
+      const marker = Buffer.from(`--${boundary}`);
+      const headerEnd = body.indexOf(Buffer.from('\r\n\r\n'));
+      const disposition = body.subarray(0, headerEnd).toString('utf8');
+      const originalName = disposition.match(/filename="([^"]+)"/)?.[1];
+      if (!originalName || headerEnd < 0) return reject(new Error('image file missing'));
+      const dataStart = headerEnd + 4;
+      const dataEnd = body.indexOf(marker, dataStart) - 2;
+      resolve({ originalName, data: body.subarray(dataStart, dataEnd) });
+    });
+    req.on('error', reject);
+  });
+}
+
+async function handleUploadImage(req, res) {
+  const { originalName, data } = await readMultipartFile(req);
+  const extension = path.extname(originalName).toLowerCase();
+  if (!/^\.(jpg|jpeg|png|gif|svg|webp|avif)$/i.test(extension)) {
+    return respond(res, { error: 'unsupported image type' }, 400);
+  }
+  const imagesDir = path.join(ROOT, 'public', 'images');
+  await fs.mkdir(imagesDir, { recursive: true });
+  const fileName = safeImageName(originalName);
+  await fs.writeFile(path.join(imagesDir, fileName), data);
+  respond(res, { ok: true, name: fileName, src: `/images/${fileName}` });
+}
+
+async function handleRenameImage(req, res) {
+  const { oldName, newName } = await readBody(req);
+  const oldFileName = path.basename(oldName || '');
+  const newFileName = safeImageName(newName || '');
+  if (!oldFileName || !/^\.(jpg|jpeg|png|gif|svg|webp|avif)$/i.test(path.extname(newFileName))) {
+    return respond(res, { error: 'valid image names required' }, 400);
+  }
+  const imagesDir = path.join(ROOT, 'public', 'images');
+  await fs.rename(path.join(imagesDir, oldFileName), path.join(imagesDir, newFileName));
+  respond(res, { ok: true, name: newFileName, src: `/images/${newFileName}` });
+}
+
 // ─── Template ────────────────────────────────────────────────────────────────
 
 function emptyPageJsx(label) {
@@ -178,6 +254,8 @@ export function editorPlugin() {
           'POST page':  handleCreatePage,
           'DELETE page': handleDeletePage,
           'GET images': handleListImages,
+          'POST images': handleUploadImage,
+          'PATCH images': handleRenameImage,
         };
 
         const handler = handlers[key];

@@ -2,6 +2,7 @@
   {
     "id": "home",
     "label": "Home",
+    "path": "home",
     "icon": "far:house"
   },
   {

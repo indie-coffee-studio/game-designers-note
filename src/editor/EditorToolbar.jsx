@@ -115,6 +115,7 @@ export function EditorToolbar({ editor, onInsertFigure }) {
         </ToolBtn>
       ))}
       <ToolBtn title="Insert figure" onClick={onInsertFigure}>⬜</ToolBtn>
+      <ToolBtn title="Insert cards grid" onClick={() => editor.commands.insertCardsGrid()}>📇</ToolBtn>
 
       <Sep />
 

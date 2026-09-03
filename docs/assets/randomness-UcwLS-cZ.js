@@ -1,1 +1,0 @@
-import{C as e,r as t,u as n,x as r}from"./index-ChliXUG1.js";e();var i=r();function a({go:e}){return(0,i.jsxs)(`div`,{children:[(0,i.jsx)(t,{auto:!0,go:e}),(0,i.jsx)(n,{children:`Randomness`})]})}export{a as default};

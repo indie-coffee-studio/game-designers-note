@@ -12,6 +12,7 @@ import { CalloutExtension } from './extensions/CalloutExtension.js';
 import { FigureExtension } from './extensions/FigureExtension.js';
 import { InternalLinkExtension } from './extensions/InternalLinkExtension.js';
 import { LIColorExtension } from './extensions/LIColorExtension.js';
+import { CardsGridExtension } from './extensions/CardsGridExtension.js';
 import { EditorToolbar } from './EditorToolbar.jsx';
 import styles from './PageEditor.module.css';
 
@@ -86,9 +87,23 @@ const EXTENSIONS = [
   TaskItem.configure({ nested: false }),
   CalloutExtension,
   FigureExtension,
+  CardsGridExtension,
   InternalLinkExtension,
   AnnotationExtension,
 ];
+
+async function uploadImage(file) {
+  const formData = new FormData();
+  formData.append('file', file, file.name);
+  const response = await fetch('/api/editor/images', { method: 'POST', body: formData });
+  const result = await response.json();
+  if (!response.ok) throw new Error(result.error || 'Image upload failed');
+  return result;
+}
+
+function imageFileFromTransfer(dataTransfer) {
+  return Array.from(dataTransfer?.files || []).find((file) => file.type.startsWith('image/'));
+}
 
 // ─── Link popup ──────────────────────────────────────────────────────────────
 
@@ -142,6 +157,33 @@ export function PageEditor({ pageId, onDirty }) {
   const editor = useEditor({
     extensions: EXTENSIONS,
     content: null,
+    editorProps: {
+      handlePaste: (view, event) => {
+        const file = imageFileFromTransfer(event.clipboardData);
+        if (!file) return false;
+        uploadImage(file)
+          .then(({ src }) => {
+            const node = view.state.schema.nodes.figure.create({ src, caption: '' });
+            view.dispatch(view.state.tr.replaceSelectionWith(node).scrollIntoView());
+          })
+          .catch((uploadError) => setError(uploadError.message));
+        return true;
+      },
+      handleDrop: (view, event) => {
+        const file = imageFileFromTransfer(event.dataTransfer);
+        if (!file) return false;
+        event.preventDefault();
+        uploadImage(file)
+          .then(({ src }) => {
+            const coordinates = view.posAtCoords({ left: event.clientX, top: event.clientY });
+            const position = coordinates?.pos ?? view.state.selection.from;
+            const node = view.state.schema.nodes.figure.create({ src, caption: '' });
+            view.dispatch(view.state.tr.insert(position, node).scrollIntoView());
+          })
+          .catch((uploadError) => setError(uploadError.message));
+        return true;
+      },
+    },
     onUpdate: () => {
       setSaveStatus('');
       if (onDirty) onDirty();

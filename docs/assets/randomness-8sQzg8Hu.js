@@ -1,0 +1,1 @@
+import{C as e,l as t,n,x as r}from"./index-CNw17l4v.js";e();var i=r();function a({go:e}){return(0,i.jsxs)(`div`,{children:[(0,i.jsx)(n,{auto:!0,go:e}),(0,i.jsx)(t,{children:`Randomness`})]})}export{a as default};

@@ -5,6 +5,24 @@ export function FigureNodeView({ node, updateAttributes, selected }) {
   const { src, caption } = node.attrs;
   const [editingCaption, setEditingCaption] = useState(false);
   const [editingSrc, setEditingSrc] = useState(false);
+  const [filename, setFilename] = useState(src.split('/').pop() || '');
+
+  const renameImage = async () => {
+    const oldName = src.split('/').pop();
+    if (!oldName || !filename || filename === oldName) {
+      setEditingSrc(false);
+      return;
+    }
+    const response = await fetch('/api/editor/images', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ oldName, newName: filename }),
+    });
+    const result = await response.json();
+    if (!response.ok) return;
+    updateAttributes({ src: result.src });
+    setEditingSrc(false);
+  };
 
   return (
     <NodeViewWrapper>
@@ -12,7 +30,7 @@ export function FigureNodeView({ node, updateAttributes, selected }) {
         style={{ margin: '12px 0', textAlign: 'center', outline: selected ? '2px solid #4a90d9' : 'none', borderRadius: '4px' }}
       >
         {src ? (
-          <img src={src} alt={caption} style={{ maxWidth: '100%', borderRadius: '4px', cursor: 'pointer' }} onClick={() => setEditingSrc(true)} />
+          <img src={src} alt={caption} style={{ maxWidth: '100%', borderRadius: '4px', cursor: 'pointer' }} onClick={() => { setFilename(src.split('/').pop() || ''); setEditingSrc(true); }} />
         ) : (
           <div
             onClick={() => setEditingSrc(true)}
@@ -24,11 +42,12 @@ export function FigureNodeView({ node, updateAttributes, selected }) {
         {editingSrc && (
           <input
             autoFocus
-            defaultValue={src}
-            placeholder="/images/example.jpg"
+            value={filename}
+            placeholder="image-name.jpg"
             style={{ display: 'block', width: '100%', marginTop: '4px', padding: '4px 8px', fontSize: '12px', border: '1px solid #ccc', borderRadius: '4px' }}
-            onBlur={(e) => { updateAttributes({ src: e.target.value }); setEditingSrc(false); }}
-            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === 'Escape') e.target.blur(); }}
+            onChange={(e) => setFilename(e.target.value)}
+            onBlur={renameImage}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === 'Escape') e.currentTarget.blur(); }}
           />
         )}
         <figcaption

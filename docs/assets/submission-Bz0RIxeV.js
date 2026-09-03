@@ -1,1 +1,0 @@
-import{C as e,d as t,n,r,u as i,x as a}from"./index-ChliXUG1.js";e();var o=a();function s({go:e}){return(0,o.jsxs)(`div`,{children:[(0,o.jsx)(r,{auto:!0,go:e}),(0,o.jsx)(i,{children:`Submission`}),(0,o.jsx)(t,{id:`numbers`,children:`Numbers`}),(0,o.jsx)(n,{children:`Satisfaction from numbers going up. Think incremental games or Balatro.`})]})}export{s as default};

@@ -1,0 +1,116 @@
+{
+  "type": "doc",
+  "content": [
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ],
+          "text": "Game Design Brew Log"
+        },
+        {
+          "type": "text",
+          "text": " is a personal knowledge base for game design. Inspired by "
+        },
+        {
+          "type": "text",
+          "marks": [
+            {
+              "type": "link",
+              "attrs": {
+                "href": "https://book.leveldesignbook.com/",
+                "target": "_blank",
+                "rel": "noopener noreferrer nofollow",
+                "class": null,
+                "title": null
+              }
+            },
+            {
+              "type": "italic"
+            }
+          ],
+          "text": "The Level Design Book"
+        },
+        {
+          "type": "text",
+          "text": ", this is an ongoing attempt to turn scattered notes and half-finished thoughts into something structured and useful. These are personal views and starting points for thinking, not definitive answers."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "attrs": {
+        "calloutType": "info"
+      },
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Many notes were taken from videos and other sources over time, and some references may have been lost along the way. If you recognize any uncredited content, feel free to reach out at "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ],
+              "text": "indie_coffee@outlook.com"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "cardsGrid",
+      "attrs": {
+        "cards": [
+          {
+            "id": "gameplay-design",
+            "title": "Gameplay Design",
+            "image": "/images/Gameplay%20Design.jpg"
+          },
+          {
+            "id": "game-experience",
+            "title": "Game Experience",
+            "image": "/images/Game%20Experience.jpg"
+          },
+          {
+            "id": "game-development",
+            "title": "Game Development",
+            "image": "/images/Game%20Dev.jpg"
+          },
+          {
+            "id": "level-design",
+            "title": "Level Design",
+            "image": "/images/Level%20Design.jpg"
+          },
+          {
+            "id": "narrative-design",
+            "title": "Narrative Design",
+            "image": "/images/Narrative%20Design.jpeg"
+          },
+          {
+            "id": "appendix",
+            "title": "Appendix",
+            "image": "/images/Appendix.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "type": "paragraph"
+    }
+  ]
+}

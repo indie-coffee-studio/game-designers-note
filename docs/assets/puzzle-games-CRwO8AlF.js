@@ -1,1 +1,0 @@
-import{C as e,_ as t,m as n,r,u as i,x as a}from"./index-ChliXUG1.js";e();var o=a();function s({go:e}){return(0,o.jsxs)(`div`,{children:[(0,o.jsx)(r,{auto:!0,go:e}),(0,o.jsx)(i,{children:`Puzzle Games`}),(0,o.jsx)(t,{children:`Rule-driven, tests abstract thinking`}),(0,o.jsx)(t,{children:(0,o.jsx)(n,{id:`puzzle-design`,go:e,children:`Puzzle Design`})})]})}export{s as default};
