@@ -104,6 +104,9 @@ export function EditorToolbar({ editor, onInsertFigure }) {
       <ToolBtn title="Bullet list" active={editor.isActive('bulletList')} onClick={() => chain().toggleBulletList().run()}>UL</ToolBtn>
       <ToolBtn title="Ordered list" active={editor.isActive('orderedList')} onClick={() => chain().toggleOrderedList().run()}>1.</ToolBtn>
       <ToolBtn title="Task list" active={editor.isActive('taskList')} onClick={() => chain().toggleTaskList().run()}>Task</ToolBtn>
+      <ToolBtn title="Default list color" active={editor.isActive('listItem', { color: null })} onClick={() => chain().updateAttributes('listItem', { color: null }).run()}>A</ToolBtn>
+      <ToolBtn title="Green list item" active={editor.isActive('listItem', { color: 'green' })} onClick={() => chain().updateAttributes('listItem', { color: 'green' }).run()}>Green</ToolBtn>
+      <ToolBtn title="Red list item" active={editor.isActive('listItem', { color: 'red' })} onClick={() => chain().updateAttributes('listItem', { color: 'red' }).run()}>Red</ToolBtn>
 
       <Sep />
 

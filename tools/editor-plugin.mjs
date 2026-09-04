@@ -12,7 +12,7 @@ const NAV_DATA_PATH = path.join(ROOT, 'src', 'config', 'nav-data.json');
 // 閳光偓閳光偓閳光偓 Helpers 閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓閳光偓
 
 async function readNav() {
-  return JSON.parse(await fs.readFile(NAV_DATA_PATH, 'utf-8'));
+  return JSON.parse((await fs.readFile(NAV_DATA_PATH, 'utf-8')).replace(/^\uFEFF/, ''));
 }
 
 async function writeNav(data) {

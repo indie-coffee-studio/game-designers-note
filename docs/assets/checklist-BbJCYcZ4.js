@@ -1,0 +1,1 @@
+import{C as e,a as t,i as n,l as r,n as i,x as a}from"./index-CR4_ZIoM.js";e();var o=a();function s({go:e}){return(0,o.jsxs)(`div`,{children:[(0,o.jsx)(i,{auto:!0,go:e}),(0,o.jsx)(r,{children:`Checklist`}),(0,o.jsxs)(t,{children:[(0,o.jsx)(n,{children:`Target Audience`}),(0,o.jsx)(n,{children:`Game Length`})]})]})}export{s as default};

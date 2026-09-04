@@ -1,1021 +1,1033 @@
 [
-  {
-    "id": "home",
-    "label": "Home",
-    "path": "home",
-    "icon": "far:house"
-  },
-  {
-    "id": "gameplay-design",
-    "label": "Gameplay Design",
-    "path": "gameplay-design",
-    "icon": "fas:gamepad",
-    "children": [
-      {
-        "id": "game-vision",
-        "label": "Game Vision",
-        "path": "gameplay-design/game-vision",
-        "children": [
-          {
-            "id": "game-loop",
-            "label": "Game Loop",
-            "path": "gameplay-design/game-vision/game-loop",
-            "icon": "bars-progress"
-          },
-          {
-            "id": "checklist",
-            "label": "Checklist",
-            "path": "gameplay-design/game-vision/checklist",
-            "icon": "clipboard-check"
-          }
-        ],
-        "icon": "bullseye"
-      },
-      {
-        "id": "system-review",
-        "label": "System Review",
-        "path": "gameplay-design/system-review",
-        "children": [
-          {
-            "id": "self-check",
-            "label": "Self-check",
-            "path": "gameplay-design/system-review/self-check",
-            "icon": "clipboard-check"
-          },
-          {
-            "id": "intuitive-design",
-            "label": "Intuitive Design",
-            "path": "gameplay-design/system-review/intuitive-design",
-            "icon": "lightbulb"
-          }
-        ],
-        "icon": "magnifying-glass"
-      },
-      {
-        "id": "emergent-gameplay",
-        "label": "Emergent Gameplay",
-        "path": "gameplay-design/emergent-gameplay",
-        "children": [
-          {
-            "id": "complex-systems",
-            "label": "Complex Systems",
-            "path": "gameplay-design/emergent-gameplay/complex-systems",
-            "icon": "star"
-          }
-        ],
-        "icon": "paintbrush"
-      },
-      {
-        "id": "core-systems",
-        "label": "Core Systems",
-        "path": "gameplay-design/specific-systems/core-systems",
-        "icon": "cubes",
-        "children": [
-          {
-            "id": "action-games",
-            "label": "Action Games",
-            "path": "gameplay-design/specific-systems/core-systems/action-games",
-            "icon": "shield-halved",
-            "children": [
-              {
-                "id": "player",
-                "label": "Player",
-                "path": "gameplay-design/specific-systems/core-systems/action-games/player",
-                "icon": "person-running",
-                "children": [
-                  {
-                    "id": "actions",
-                    "label": "Actions",
-                    "path": "gameplay-design/specific-systems/core-systems/action-games/player/actions",
-                    "icon": "hand-fist"
-                  },
-                  {
-                    "id": "platformer",
-                    "label": "Platformer",
-                    "path": "gameplay-design/specific-systems/core-systems/action-games/player/platformer",
-                    "icon": "layer-group"
-                  }
-                ]
-              },
-              {
-                "id": "enemy",
-                "label": "Enemy",
-                "path": "gameplay-design/specific-systems/core-systems/action-games/enemy",
-                "icon": "skull",
-                "children": [
-                  {
-                    "id": "boss",
-                    "label": "Boss",
-                    "path": "gameplay-design/specific-systems/core-systems/action-games/enemy/boss",
-                    "icon": "dragon",
-                    "children": [
-                      {
-                        "id": "boss-design",
-                        "label": "Boss Design",
-                        "path": "gameplay-design/specific-systems/core-systems/action-games/enemy/boss/boss-design",
-                        "icon": "pen-ruler",
-                        "children": [
-                          {
-                            "id": "boss-attacks",
-                            "label": "Boss Attacks",
-                            "path": "gameplay-design/specific-systems/core-systems/action-games/enemy/boss/boss-design/boss-attacks",
-                            "icon": "burst"
-                          },
-                          {
-                            "id": "boss-reaction",
-                            "label": "Boss Reaction",
-                            "path": "gameplay-design/specific-systems/core-systems/action-games/enemy/boss/boss-design/boss-reaction",
-                            "icon": "bolt"
-                          },
-                          {
-                            "id": "boss-types",
-                            "label": "Boss Types",
-                            "path": "gameplay-design/specific-systems/core-systems/action-games/enemy/boss/boss-design/boss-types",
-                            "icon": "list"
-                          },
-                          {
-                            "id": "stagger-system",
-                            "label": "Stagger System",
-                            "path": "gameplay-design/specific-systems/core-systems/action-games/enemy/boss/boss-design/stagger-system",
-                            "icon": "person-falling"
-                          }
-                        ]
-                      },
-                      {
-                        "id": "multiple-bosses",
-                        "label": "Multiple Bosses",
-                        "path": "gameplay-design/specific-systems/core-systems/action-games/enemy/boss/multiple-bosses",
-                        "icon": "users"
-                      }
-                    ]
-                  },
-                  {
-                    "id": "mob",
-                    "label": "Mob",
-                    "path": "gameplay-design/specific-systems/core-systems/action-games/enemy/mob",
-                    "icon": "ghost"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "card-games",
-            "label": "Card Games",
-            "path": "gameplay-design/specific-systems/core-systems/card-games",
-            "icon": "clone",
-            "children": [
-              {
-                "id": "balancing",
-                "label": "Balancing",
-                "path": "gameplay-design/specific-systems/core-systems/card-games/balancing",
-                "icon": "scale-balanced"
-              },
-              {
-                "id": "card-design",
-                "label": "Card Design",
-                "path": "gameplay-design/specific-systems/core-systems/card-games/card-design",
-                "icon": "id-card"
-              },
-              {
-                "id": "end-turn-resolution",
-                "label": "End-turn Resolution",
-                "path": "gameplay-design/specific-systems/core-systems/card-games/end-turn-resolution",
-                "icon": "rotate-right"
-              }
-            ]
-          },
-          {
-            "id": "detective-games",
-            "label": "Detective Games",
-            "path": "gameplay-design/specific-systems/core-systems/detective-games",
-            "icon": "magnifying-glass"
-          },
-          {
-            "id": "puzzle-games",
-            "label": "Puzzle Games",
-            "path": "gameplay-design/specific-systems/core-systems/puzzle-games",
-            "icon": "puzzle-piece"
-          },
-          {
-            "id": "tactic-system",
-            "label": "Tactic System",
-            "path": "gameplay-design/specific-systems/core-systems/tactic-system",
-            "icon": "chess"
-          }
-        ]
-      },
-      {
-        "id": "more-systems",
-        "label": "More Systems",
-        "path": "gameplay-design/specific-systems/more-systems",
-        "icon": "sliders",
-        "children": [
-          {
-            "id": "dice-system",
-            "label": "Dice System",
-            "path": "gameplay-design/specific-systems/more-systems/dice-system",
-            "icon": "dice"
-          },
-          {
-            "id": "engineering-system",
-            "label": "Engineering System",
-            "path": "gameplay-design/specific-systems/more-systems/engineering-system",
-            "icon": "gear"
-          },
-          {
-            "id": "minigame-system",
-            "label": "Minigame System",
-            "path": "gameplay-design/specific-systems/more-systems/minigame-system",
-            "icon": "gamepad"
-          },
-          {
-            "id": "multiplayer",
-            "label": "Multiplayer",
-            "path": "gameplay-design/specific-systems/more-systems/multiplayer",
-            "icon": "users"
-          },
-          {
-            "id": "negotiation-system",
-            "label": "Negotiation System",
-            "path": "gameplay-design/specific-systems/more-systems/negotiation-system",
-            "icon": "handshake"
-          },
-          {
-            "id": "partner-system",
-            "label": "Partner System",
-            "path": "gameplay-design/specific-systems/more-systems/partner-system",
-            "icon": "user-group",
-            "children": [
-              {
-                "id": "parallel-presence",
-                "label": "Parallel Presence",
-                "path": "gameplay-design/specific-systems/more-systems/partner-system/parallel-presence",
-                "icon": "clone"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "supporting-systems",
-        "label": "Supporting Systems",
-        "path": "gameplay-design/specific-systems/supporting-systems",
-        "icon": "screwdriver-wrench",
-        "children": [
-          {
-            "id": "achievement-system",
-            "label": "Achievement System",
-            "path": "gameplay-design/specific-systems/supporting-systems/achievement-system",
-            "icon": "trophy"
-          },
-          {
-            "id": "animation-system",
-            "label": "Animation System",
-            "path": "gameplay-design/specific-systems/supporting-systems/animation-system",
-            "icon": "film"
-          },
-          {
-            "id": "death-system",
-            "label": "Death System",
-            "path": "gameplay-design/specific-systems/supporting-systems/death-system",
-            "icon": "heart-crack"
-          },
-          {
-            "id": "sys-home",
-            "label": "Home System",
-            "path": "gameplay-design/specific-systems/supporting-systems/home-system",
-            "icon": "house"
-          },
-          {
-            "id": "map-system",
-            "label": "Map System",
-            "path": "gameplay-design/specific-systems/supporting-systems/map-system",
-            "icon": "map"
-          },
-          {
-            "id": "moving-system",
-            "label": "Moving System",
-            "path": "gameplay-design/specific-systems/supporting-systems/moving-system",
-            "icon": "arrows-up-down-left-right"
-          },
-          {
-            "id": "progression-system",
-            "label": "Progression System",
-            "path": "gameplay-design/specific-systems/supporting-systems/progression-system",
-            "icon": "chart-line"
-          },
-          {
-            "id": "randomness",
-            "label": "Randomness",
-            "path": "gameplay-design/specific-systems/supporting-systems/randomness",
-            "icon": "shuffle",
-            "children": [
-              {
-                "id": "input-randomness",
-                "label": "Input Randomness",
-                "path": "gameplay-design/specific-systems/supporting-systems/randomness/input-randomness",
-                "icon": "shuffle"
-              },
-              {
-                "id": "output-randomness",
-                "label": "Output Randomness",
-                "path": "gameplay-design/specific-systems/supporting-systems/randomness/output-randomness",
-                "icon": "dice"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "game-experience",
-    "label": "Game Experience",
-    "path": "game-experience",
-    "icon": "eye",
-    "children": [
-      {
-        "id": "8-funs",
-        "label": "8 Funs",
-        "path": "game-experience/8-funs",
-        "icon": "far:face-laugh",
-        "children": [
-          {
-            "id": "sensation",
-            "label": "Sensation",
-            "path": "game-experience/8-funs/sensation",
-            "icon": "gem"
-          },
-          {
-            "id": "challenge",
-            "label": "Challenge",
-            "path": "game-experience/8-funs/challenge",
-            "children": [
-              {
-                "id": "depth-of-gameplay",
-                "label": "Depth of Gameplay",
-                "path": "game-experience/8-funs/challenge/depth-of-gameplay"
-              },
-              {
-                "id": "flavors-of-difficulty",
-                "label": "Flavors of Difficulty",
-                "path": "game-experience/8-funs/challenge/flavors-of-difficulty",
-                "children": [
-                  {
-                    "id": "reasoning",
-                    "label": "Reasoning",
-                    "path": "game-experience/8-funs/challenge/flavors-of-difficulty/reasoning"
-                  },
-                  {
-                    "id": "physical",
-                    "label": "Physical",
-                    "path": "game-experience/8-funs/challenge/flavors-of-difficulty/physical"
-                  }
-                ]
-              },
-              {
-                "id": "how-difficult",
-                "label": "How Difficult",
-                "path": "game-experience/8-funs/challenge/how-difficult",
-                "children": [
-                  {
-                    "id": "how-our-brain-works",
-                    "label": "How our Brain Works",
-                    "path": "game-experience/8-funs/challenge/how-difficult/how-our-brain-works"
-                  },
-                  {
-                    "id": "control-difficulty",
-                    "label": "Control Difficulty",
-                    "path": "game-experience/8-funs/challenge/how-difficult/control-difficulty"
-                  }
-                ]
-              }
-            ],
-            "icon": "hand-fist"
-          },
-          {
-            "id": "discovery",
-            "label": "Discovery",
-            "path": "game-experience/8-funs/discovery",
-            "children": [
-              {
-                "id": "curiosity",
-                "label": "Curiosity",
-                "path": "game-experience/8-funs/discovery/curiosity",
-                "children": [
-                  {
-                    "id": "building-curiosity",
-                    "label": "Building Curiosity",
-                    "path": "game-experience/8-funs/discovery/curiosity/building-curiosity"
-                  },
-                  {
-                    "id": "objects-of-curiosity",
-                    "label": "Objects of Curiosity",
-                    "path": "game-experience/8-funs/discovery/curiosity/objects-of-curiosity"
-                  },
-                  {
-                    "id": "rewarding-exploration",
-                    "label": "Rewarding Exploration",
-                    "path": "game-experience/8-funs/discovery/curiosity/rewarding-exploration"
-                  },
-                  {
-                    "id": "extra-content",
-                    "label": "Extra Content",
-                    "path": "game-experience/8-funs/discovery/curiosity/extra-content"
-                  }
-                ]
-              },
-              {
-                "id": "the-eureka-moment",
-                "label": "The Eureka Moment",
-                "path": "game-experience/8-funs/discovery/the-eureka-moment"
-              }
-            ],
-            "icon": "cat"
-          },
-          {
-            "id": "expression",
-            "label": "Expression",
-            "path": "game-experience/8-funs/expression",
-            "children": [
-              {
-                "id": "player-agency",
-                "label": "Player Agency",
-                "path": "game-experience/8-funs/expression/player-agency"
-              }
-            ],
-            "icon": "paintbrush"
-          },
-          {
-            "id": "submission",
-            "label": "Submission",
-            "path": "game-experience/8-funs/submission",
-            "icon": "sack-dollar"
-          }
-        ]
-      },
-      {
-        "id": "game-feel",
-        "label": "Game Feel",
-        "path": "game-experience/game-feel",
-        "children": [
-          {
-            "id": "readability",
-            "label": "Readability",
-            "path": "game-experience/game-feel/readability",
-            "icon": "glasses"
-          },
-          {
-            "id": "fluidity",
-            "label": "Fluidity",
-            "path": "game-experience/game-feel/fluidity",
-            "children": [
-              {
-                "id": "input-and-controls",
-                "label": "Input And Controls",
-                "path": "game-experience/game-feel/fluidity/input-and-controls"
-              },
-              {
-                "id": "time-scale",
-                "label": "Time-scale",
-                "path": "game-experience/game-feel/fluidity/time-scale"
-              }
-            ],
-            "icon": "water"
-          },
-          {
-            "id": "juice-elements",
-            "label": "Juice Elements",
-            "path": "game-experience/game-feel/juice-elements",
-            "icon": "bolt"
-          }
-        ],
-        "icon": "bolt"
-      },
-      {
-        "id": "the-magic-circle",
-        "label": "The Magic Circle",
-        "path": "game-experience/the-magic-circle",
-        "children": [
-          {
-            "id": "expectation-management",
-            "label": "Expectation Management",
-            "path": "game-experience/the-magic-circle/expectation-management",
-            "icon": "sliders"
-          },
-          {
-            "id": "feedback-loops",
-            "label": "Feedback Loops",
-            "path": "game-experience/the-magic-circle/feedback-loops",
-            "icon": "bars-progress"
-          },
-          {
-            "id": "flow-state",
-            "label": "Flow State",
-            "path": "game-experience/the-magic-circle/flow-state",
-            "children": [
-              {
-                "id": "match-difficulty-with-player-growth",
-                "label": "Match Difficulty with Player Growth",
-                "path": "game-experience/the-magic-circle/flow-state/match-difficulty-with-player-growth",
-                "children": [
-                  {
-                    "id": "player-progression",
-                    "label": "Player Progression",
-                    "path": "game-experience/the-magic-circle/flow-state/match-difficulty-with-player-growth/player-progression"
-                  }
-                ]
-              }
-            ],
-            "icon": "water"
-          }
-        ],
-        "icon": "bullseye"
-      },
-      {
-        "id": "negative-experience",
-        "label": "Negative Experience",
-        "path": "game-experience/negative-experience",
-        "icon": "far:face-frown"
-      },
-      {
-        "id": "other-experience",
-        "label": "Other Experience",
-        "path": "game-experience/other-experience",
-        "children": [
-          {
-            "id": "horror-and-discomfort",
-            "label": "Horror And Discomfort",
-            "path": "game-experience/other-experience/horror-and-discomfort",
-            "children": [
-              {
-                "id": "types-of-fear",
-                "label": "Types of Fear",
-                "path": "game-experience/other-experience/horror-and-discomfort/types-of-fear"
-              },
-              {
-                "id": "creating-unease",
-                "label": "Creating Unease",
-                "path": "game-experience/other-experience/horror-and-discomfort/creating-unease",
-                "children": [
-                  {
-                    "id": "uncanny-valley",
-                    "label": "Uncanny Valley",
-                    "path": "game-experience/other-experience/horror-and-discomfort/creating-unease/uncanny-valley"
-                  },
-                  {
-                    "id": "unknown",
-                    "label": "Unknown",
-                    "path": "game-experience/other-experience/horror-and-discomfort/creating-unease/unknown"
-                  }
-                ]
-              }
-            ],
-            "icon": "ghost"
-          }
-        ],
-        "icon": "star"
-      }
-    ]
-  },
-  {
-    "id": "game-development",
-    "label": "Game Development",
-    "path": "game-development",
-    "children": [
-      {
-        "id": "structure",
-        "label": "Structure",
-        "path": "game-development/structure",
-        "icon": "folder-tree"
-      },
-      {
-        "id": "bug-handling",
-        "label": "Bug Handling",
-        "path": "game-development/bug-handling",
-        "icon": "fas:bug"
-      }
-    ]
-  },
-  {
-    "id": "level-design",
-    "label": "Level Design",
-    "path": "level-design",
-    "icon": "map-location-dot",
-    "children": [
-      {
-        "id": "design-process",
-        "label": "Design Process",
-        "path": "level-design/design-process",
-        "children": [
-          {
-            "id": "plan",
-            "label": "Plan",
-            "path": "level-design/design-process/plan",
-            "icon": "clipboard-list"
-          },
-          {
-            "id": "sketch",
-            "label": "Sketch",
-            "path": "level-design/design-process/sketch",
-            "icon": "pencil"
-          },
-          {
-            "id": "blockout",
-            "label": "Blockout",
-            "path": "level-design/design-process/blockout",
-            "icon": "cube"
-          },
-          {
-            "id": "review",
-            "label": "Review",
-            "path": "level-design/design-process/review",
-            "icon": "clipboard-check"
-          }
-        ],
-        "icon": "bars-progress"
-      },
-      {
-        "id": "guidance",
-        "label": "Guidance",
-        "path": "level-design/guidance",
-        "children": [
-          {
-            "id": "macro-guidance",
-            "label": "Macro Guidance",
-            "path": "level-design/guidance/macro-guidance",
-            "icon": "compass"
-          },
-          {
-            "id": "micro-guidance",
-            "label": "Micro Guidance",
-            "path": "level-design/guidance/micro-guidance",
-            "icon": "eye"
-          },
-          {
-            "id": "tutorial-levels",
-            "label": "Tutorial Levels",
-            "path": "level-design/guidance/tutorial-levels",
-            "icon": "graduation-cap"
-          }
-        ],
-        "icon": "signs-post"
-      },
-      {
-        "id": "layout",
-        "label": "Layout",
-        "path": "level-design/layout",
-        "children": [
-          {
-            "id": "level-components",
-            "label": "Level Components",
-            "path": "level-design/layout/level-components",
-            "children": [
-              {
-                "id": "level-elements",
-                "label": "Level Elements",
-                "path": "level-design/layout/level-components/level-elements"
-              },
-              {
-                "id": "layout-patterns",
-                "label": "Layout Patterns",
-                "path": "level-design/layout/level-components/layout-patterns",
-                "children": [
-                  {
-                    "id": "functional-patterns",
-                    "label": "Functional Patterns",
-                    "path": "level-design/layout/level-components/layout-patterns/functional-patterns"
-                  }
-                ]
-              }
-            ],
-            "icon": "cubes"
-          },
-          {
-            "id": "cognitive-map",
-            "label": "Cognitive Map",
-            "path": "level-design/layout/cognitive-map",
-            "children": [
-              {
-                "id": "coginitive-map-elements",
-                "label": "Coginitive Map Elements",
-                "path": "level-design/layout/cognitive-map/coginitive-map-elements"
-              },
-              {
-                "id": "waytracking-disruptions",
-                "label": "Waytracking Disruptions",
-                "path": "level-design/layout/cognitive-map/waytracking-disruptions"
-              }
-            ],
-            "icon": "map"
-          },
-          {
-            "id": "map-hierarchy",
-            "label": "Map Hierarchy",
-            "path": "level-design/layout/map-hierarchy",
-            "icon": "sitemap"
-          },
-          {
-            "id": "verticality",
-            "label": "Verticality",
-            "path": "level-design/layout/verticality",
-            "children": [
-              {
-                "id": "stairs",
-                "label": "Stairs",
-                "path": "level-design/layout/verticality/stairs"
-              }
-            ],
-            "icon": "arrows-up-down"
-          }
-        ],
-        "icon": "table-cells-large"
-      },
-      {
-        "id": "pacing",
-        "label": "Pacing",
-        "path": "level-design/pacing",
-        "children": [
-          {
-            "id": "circulation",
-            "label": "Circulation",
-            "path": "level-design/pacing/circulation",
-            "children": [
-              {
-                "id": "circulation-elements",
-                "label": "Circulation Elements",
-                "path": "level-design/pacing/circulation/circulation-elements"
-              },
-              {
-                "id": "circulation-patterns",
-                "label": "Circulation Patterns",
-                "path": "level-design/pacing/circulation/circulation-patterns"
-              },
-              {
-                "id": "pace-control",
-                "label": "Pace Control",
-                "path": "level-design/pacing/circulation/pace-control",
-                "children": [
-                  {
-                    "id": "psychology",
-                    "label": "Psychology",
-                    "path": "level-design/pacing/circulation/pace-control/psychology"
-                  }
-                ]
-              }
-            ],
-            "icon": "route"
-          },
-          {
-            "id": "game-beat",
-            "label": "Game Beat",
-            "path": "level-design/pacing/game-beat",
-            "children": [
-              {
-                "id": "common-beat-elements",
-                "label": "Common Beat Elements",
-                "path": "level-design/pacing/game-beat/common-beat-elements"
-              },
-              {
-                "id": "design-beat-by-need",
-                "label": "Design Beat by Need",
-                "path": "level-design/pacing/game-beat/design-beat-by-need"
-              },
-              {
-                "id": "game-beat-examples",
-                "label": "Game Beat Examples",
-                "path": "level-design/pacing/game-beat/game-beat-examples"
-              },
-              {
-                "id": "open-world",
-                "label": "Open world",
-                "path": "level-design/pacing/game-beat/open-world"
-              }
-            ],
-            "icon": "chart-line"
-          }
-        ],
-        "icon": "gauge-high"
-      },
-      {
-        "id": "puzzle-design",
-        "label": "Puzzle Design",
-        "path": "level-design/puzzle-design",
-        "icon": "puzzle-piece"
-      },
-      {
-        "id": "reward-and-exploration",
-        "label": "Reward And Exploration",
-        "path": "level-design/reward-and-exploration",
-        "children": [
-          {
-            "id": "lock-and-key",
-            "label": "Lock And Key",
-            "path": "level-design/reward-and-exploration/lock-and-key",
-            "icon": "key"
-          },
-          {
-            "id": "rewards",
-            "label": "Rewards",
-            "path": "level-design/reward-and-exploration/rewards",
-            "icon": "gift",
-            "children": [
-              {
-                "id": "how-to-display-rewards",
-                "label": "How to display rewards",
-                "path": "level-design/reward-and-exploration/rewards/how-to-display-rewards"
-              }
-            ]
-          }
-        ],
-        "icon": "gem"
-      }
-    ]
-  },
-  {
-    "id": "narrative-design",
-    "label": "Narrative Design",
-    "path": "narrative-design",
-    "icon": "book-open-reader",
-    "children": [
-      {
-        "id": "moral",
-        "label": "Moral",
-        "path": "narrative-design/moral",
-        "children": [
-          {
-            "id": "descrimination",
-            "label": "Descrimination",
-            "path": "narrative-design/moral/descrimination",
-            "icon": "user-slash"
-          },
-          {
-            "id": "violence",
-            "label": "Violence",
-            "path": "narrative-design/moral/violence",
-            "icon": "hand-fist"
-          }
-        ],
-        "icon": "scale-balanced"
-      },
-      {
-        "id": "narrative-structure",
-        "label": "Narrative Structure",
-        "path": "narrative-design/narrative-structure",
-        "children": [
-          {
-            "id": "narrative-elements",
-            "label": "Narrative Elements",
-            "path": "narrative-design/narrative-structure/narrative-elements",
-            "icon": "puzzle-piece"
-          },
-          {
-            "id": "narrative-patterns",
-            "label": "Narrative Patterns",
-            "path": "narrative-design/narrative-structure/narrative-patterns",
-            "children": [
-              {
-                "id": "emergent-narrative",
-                "label": "Emergent Narrative",
-                "path": "narrative-design/narrative-structure/narrative-patterns/emergent-narrative"
-              },
-              {
-                "id": "fragmented-narrative",
-                "label": "Fragmented Narrative",
-                "path": "narrative-design/narrative-structure/narrative-patterns/fragmented-narrative"
-              },
-              {
-                "id": "linear-narrative",
-                "label": "Linear Narrative",
-                "path": "narrative-design/narrative-structure/narrative-patterns/linear-narrative"
-              },
-              {
-                "id": "multi-thread-narrative",
-                "label": "Multi-thread Narrative",
-                "path": "narrative-design/narrative-structure/narrative-patterns/multi-thread-narrative",
-                "children": [
-                  {
-                    "id": "branching-structures",
-                    "label": "Branching Structures",
-                    "path": "narrative-design/narrative-structure/narrative-patterns/multi-thread-narrative/branching-structures"
-                  }
-                ]
-              }
-            ],
-            "icon": "layer-group"
-          },
-          {
-            "id": "narrative-timing",
-            "label": "Narrative Timing",
-            "path": "narrative-design/narrative-structure/narrative-timing",
-            "icon": "clock"
-          },
-          {
-            "id": "suspense",
-            "label": "Suspense",
-            "path": "narrative-design/narrative-structure/suspense",
-            "icon": "hourglass-half"
-          }
-        ],
-        "icon": "diagram-project"
-      },
-      {
-        "id": "player-and-character",
-        "label": "Player And Character",
-        "path": "narrative-design/player-and-character",
-        "children": [
-          {
-            "id": "character-design",
-            "label": "Character Design",
-            "path": "narrative-design/player-and-character/character-design",
-            "children": [
-              {
-                "id": "emotional-link",
-                "label": "Emotional Link",
-                "path": "narrative-design/player-and-character/character-design/emotional-link"
-              },
-              {
-                "id": "grounded-characters",
-                "label": "Grounded Characters",
-                "path": "narrative-design/player-and-character/character-design/grounded-characters",
-                "children": [
-                  {
-                    "id": "dialogue",
-                    "label": "Dialogue",
-                    "path": "narrative-design/player-and-character/character-design/grounded-characters/dialogue",
-                    "children": [
-                      {
-                        "id": "character-through-dialogue",
-                        "label": "Character Through Dialogue",
-                        "path": "narrative-design/player-and-character/character-design/grounded-characters/dialogue/character-through-dialogue"
-                      },
-                      {
-                        "id": "exposition-through-dialogue",
-                        "label": "Exposition Through Dialogue",
-                        "path": "narrative-design/player-and-character/character-design/grounded-characters/dialogue/exposition-through-dialogue"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "id": "protagonist-tone",
-                "label": "Protagonist Tone",
-                "path": "narrative-design/player-and-character/character-design/protagonist-tone"
-              }
-            ],
-            "icon": "id-card"
-          }
-        ],
-        "icon": "user"
-      },
-      {
-        "id": "narrative-design-world-building",
-        "label": "World Building",
-        "path": "narrative-design/world-building",
-        "children": [
-          {
-            "id": "world-building-level-design",
-            "label": "Level Design",
-            "path": "narrative-design/world-building/level-design",
-            "icon": "route"
-          },
-          {
-            "id": "where-to-start",
-            "label": "Where to Start",
-            "path": "narrative-design/world-building/where-to-start",
-            "icon": "seedling"
-          },
-          {
-            "id": "world-authenticity",
-            "label": "World Authenticity",
-            "path": "narrative-design/world-building/world-authenticity",
-            "icon": "link"
-          }
-        ],
-        "icon": "earth-asia"
-      }
-    ]
-  },
-  {
-    "id": "appendix",
-    "label": "Appendix",
-    "path": "appendix",
-    "icon": "book-open",
-    "children": [
-      {
-        "id": "books-to-read",
-        "label": "Books to Read",
-        "path": "appendix/books-to-read",
-        "icon": "book-open"
-      },
-      {
-        "id": "tools",
-        "label": "Tools",
-        "path": "appendix/tools",
-        "icon": "screwdriver-wrench"
-      }
-    ]
-  }
+    {
+        "id":  "home",
+        "label":  "Home",
+        "path":  "home",
+        "icon":  "far:house"
+    },
+    {
+        "id":  "gameplay-design",
+        "label":  "Gameplay Design",
+        "path":  "gameplay-design",
+        "icon":  "fas:gamepad",
+        "children":  [
+                         {
+                             "id":  "game-vision",
+                             "label":  "Game Vision",
+                             "path":  "gameplay-design/game-vision",
+                             "children":  [
+                                              {
+                                                  "id":  "core-experience-first",
+                                                  "label":  "Core Experience First",
+                                                  "path":  "gameplay-design/game-vision/core-experience-first",
+                                                  "icon":  "bullseye"
+                                              },
+                                              {
+                                                  "id":  "game-loop",
+                                                  "label":  "Game Loop",
+                                                  "path":  "gameplay-design/game-vision/game-loop",
+                                                  "icon":  "bars-progress"
+                                              },
+                                              {
+                                                  "id":  "checklist",
+                                                  "label":  "Checklist",
+                                                  "path":  "gameplay-design/game-vision/checklist",
+                                                  "icon":  "clipboard-check"
+                                              }
+                                          ],
+                             "icon":  "bullseye"
+                         },
+                         {
+                             "id":  "system-review",
+                             "label":  "System Review",
+                             "path":  "gameplay-design/system-review",
+                             "children":  [
+                                              {
+                                                  "id":  "self-check",
+                                                  "label":  "Self-check",
+                                                  "path":  "gameplay-design/system-review/self-check",
+                                                  "icon":  "clipboard-check"
+                                              },
+                                              {
+                                                  "id":  "intuitive-design",
+                                                  "label":  "Intuitive Design",
+                                                  "path":  "gameplay-design/system-review/intuitive-design",
+                                                  "icon":  "lightbulb"
+                                              }
+                                          ],
+                             "icon":  "magnifying-glass"
+                         },
+                         {
+                             "id":  "emergent-gameplay",
+                             "label":  "Emergent Gameplay",
+                             "path":  "gameplay-design/emergent-gameplay",
+                             "children":  [
+                                              {
+                                                  "id":  "complex-systems",
+                                                  "label":  "Complex Systems",
+                                                  "path":  "gameplay-design/emergent-gameplay/complex-systems",
+                                                  "icon":  "star"
+                                              }
+                                          ],
+                             "icon":  "paintbrush"
+                         },
+                         {
+                             "id":  "core-systems",
+                             "label":  "Core Systems",
+                             "path":  "gameplay-design/specific-systems/core-systems",
+                             "icon":  "cubes",
+                             "children":  [
+                                              {
+                                                  "id":  "action-games",
+                                                  "label":  "Action Games",
+                                                  "path":  "gameplay-design/specific-systems/core-systems/action-games",
+                                                  "icon":  "shield-halved",
+                                                  "children":  [
+                                                                   {
+                                                                       "id":  "player",
+                                                                       "label":  "Player",
+                                                                       "path":  "gameplay-design/specific-systems/core-systems/action-games/player",
+                                                                       "icon":  "person-running",
+                                                                       "children":  [
+                                                                                        {
+                                                                                            "id":  "actions",
+                                                                                            "label":  "Actions",
+                                                                                            "path":  "gameplay-design/specific-systems/core-systems/action-games/player/actions",
+                                                                                            "icon":  "hand-fist"
+                                                                                        },
+                                                                                        {
+                                                                                            "id":  "platformer",
+                                                                                            "label":  "Platformer",
+                                                                                            "path":  "gameplay-design/specific-systems/core-systems/action-games/player/platformer",
+                                                                                            "icon":  "layer-group"
+                                                                                        }
+                                                                                    ]
+                                                                   },
+                                                                   {
+                                                                       "id":  "enemy",
+                                                                       "label":  "Enemy",
+                                                                       "path":  "gameplay-design/specific-systems/core-systems/action-games/enemy",
+                                                                       "icon":  "skull",
+                                                                       "children":  [
+                                                                                        {
+                                                                                            "id":  "boss",
+                                                                                            "label":  "Boss",
+                                                                                            "path":  "gameplay-design/specific-systems/core-systems/action-games/enemy/boss",
+                                                                                            "icon":  "dragon",
+                                                                                            "children":  [
+                                                                                                             {
+                                                                                                                 "id":  "boss-design",
+                                                                                                                 "label":  "Boss Design",
+                                                                                                                 "path":  "gameplay-design/specific-systems/core-systems/action-games/enemy/boss/boss-design",
+                                                                                                                 "icon":  "pen-ruler",
+                                                                                                                 "children":  [
+                                                                                                                                  {
+                                                                                                                                      "id":  "boss-attacks",
+                                                                                                                                      "label":  "Boss Attacks",
+                                                                                                                                      "path":  "gameplay-design/specific-systems/core-systems/action-games/enemy/boss/boss-design/boss-attacks",
+                                                                                                                                      "icon":  "burst"
+                                                                                                                                  },
+                                                                                                                                  {
+                                                                                                                                      "id":  "boss-reaction",
+                                                                                                                                      "label":  "Boss Reaction",
+                                                                                                                                      "path":  "gameplay-design/specific-systems/core-systems/action-games/enemy/boss/boss-design/boss-reaction",
+                                                                                                                                      "icon":  "bolt"
+                                                                                                                                  },
+                                                                                                                                  {
+                                                                                                                                      "id":  "boss-types",
+                                                                                                                                      "label":  "Boss Types",
+                                                                                                                                      "path":  "gameplay-design/specific-systems/core-systems/action-games/enemy/boss/boss-design/boss-types",
+                                                                                                                                      "icon":  "list"
+                                                                                                                                  },
+                                                                                                                                  {
+                                                                                                                                      "id":  "stagger-system",
+                                                                                                                                      "label":  "Stagger System",
+                                                                                                                                      "path":  "gameplay-design/specific-systems/core-systems/action-games/enemy/boss/boss-design/stagger-system",
+                                                                                                                                      "icon":  "person-falling"
+                                                                                                                                  }
+                                                                                                                              ]
+                                                                                                             },
+                                                                                                             {
+                                                                                                                 "id":  "multiple-bosses",
+                                                                                                                 "label":  "Multiple Bosses",
+                                                                                                                 "path":  "gameplay-design/specific-systems/core-systems/action-games/enemy/boss/multiple-bosses",
+                                                                                                                 "icon":  "users"
+                                                                                                             }
+                                                                                                         ]
+                                                                                        },
+                                                                                        {
+                                                                                            "id":  "mob",
+                                                                                            "label":  "Mob",
+                                                                                            "path":  "gameplay-design/specific-systems/core-systems/action-games/enemy/mob",
+                                                                                            "icon":  "ghost"
+                                                                                        }
+                                                                                    ]
+                                                                   }
+                                                               ]
+                                              },
+                                              {
+                                                  "id":  "card-games",
+                                                  "label":  "Card Games",
+                                                  "path":  "gameplay-design/specific-systems/core-systems/card-games",
+                                                  "icon":  "clone",
+                                                  "children":  [
+                                                                   {
+                                                                       "id":  "balancing",
+                                                                       "label":  "Balancing",
+                                                                       "path":  "gameplay-design/specific-systems/core-systems/card-games/balancing",
+                                                                       "icon":  "scale-balanced"
+                                                                   },
+                                                                   {
+                                                                       "id":  "card-design",
+                                                                       "label":  "Card Design",
+                                                                       "path":  "gameplay-design/specific-systems/core-systems/card-games/card-design",
+                                                                       "icon":  "id-card"
+                                                                   },
+                                                                   {
+                                                                       "id":  "end-turn-resolution",
+                                                                       "label":  "End-turn Resolution",
+                                                                       "path":  "gameplay-design/specific-systems/core-systems/card-games/end-turn-resolution",
+                                                                       "icon":  "rotate-right"
+                                                                   }
+                                                               ]
+                                              },
+                                              {
+                                                  "id":  "detective-games",
+                                                  "label":  "Detective Games",
+                                                  "path":  "gameplay-design/specific-systems/core-systems/detective-games",
+                                                  "icon":  "magnifying-glass"
+                                              },
+                                              {
+                                                  "id":  "puzzle-games",
+                                                  "label":  "Puzzle Games",
+                                                  "path":  "gameplay-design/specific-systems/core-systems/puzzle-games",
+                                                  "icon":  "puzzle-piece"
+                                              },
+                                              {
+                                                  "id":  "tactic-system",
+                                                  "label":  "Tactic System",
+                                                  "path":  "gameplay-design/specific-systems/core-systems/tactic-system",
+                                                  "icon":  "chess"
+                                              }
+                                          ]
+                         },
+                         {
+                             "id":  "more-systems",
+                             "label":  "More Systems",
+                             "path":  "gameplay-design/specific-systems/more-systems",
+                             "icon":  "sliders",
+                             "children":  [
+                                              {
+                                                  "id":  "dice-system",
+                                                  "label":  "Dice System",
+                                                  "path":  "gameplay-design/specific-systems/more-systems/dice-system",
+                                                  "icon":  "dice"
+                                              },
+                                              {
+                                                  "id":  "engineering-system",
+                                                  "label":  "Engineering System",
+                                                  "path":  "gameplay-design/specific-systems/more-systems/engineering-system",
+                                                  "icon":  "gear"
+                                              },
+                                              {
+                                                  "id":  "minigame-system",
+                                                  "label":  "Minigame System",
+                                                  "path":  "gameplay-design/specific-systems/more-systems/minigame-system",
+                                                  "icon":  "gamepad"
+                                              },
+                                              {
+                                                  "id":  "multiplayer",
+                                                  "label":  "Multiplayer",
+                                                  "path":  "gameplay-design/specific-systems/more-systems/multiplayer",
+                                                  "icon":  "users"
+                                              },
+                                              {
+                                                  "id":  "negotiation-system",
+                                                  "label":  "Negotiation System",
+                                                  "path":  "gameplay-design/specific-systems/more-systems/negotiation-system",
+                                                  "icon":  "handshake"
+                                              },
+                                              {
+                                                  "id":  "partner-system",
+                                                  "label":  "Partner System",
+                                                  "path":  "gameplay-design/specific-systems/more-systems/partner-system",
+                                                  "icon":  "user-group",
+                                                  "children":  [
+                                                                   {
+                                                                       "id":  "parallel-presence",
+                                                                       "label":  "Parallel Presence",
+                                                                       "path":  "gameplay-design/specific-systems/more-systems/partner-system/parallel-presence",
+                                                                       "icon":  "clone"
+                                                                   }
+                                                               ]
+                                              }
+                                          ]
+                         },
+                         {
+                             "id":  "supporting-systems",
+                             "label":  "Supporting Systems",
+                             "path":  "gameplay-design/specific-systems/supporting-systems",
+                             "icon":  "screwdriver-wrench",
+                             "children":  [
+                                              {
+                                                  "id":  "achievement-system",
+                                                  "label":  "Achievement System",
+                                                  "path":  "gameplay-design/specific-systems/supporting-systems/achievement-system",
+                                                  "icon":  "trophy"
+                                              },
+                                              {
+                                                  "id":  "animation-system",
+                                                  "label":  "Animation System",
+                                                  "path":  "gameplay-design/specific-systems/supporting-systems/animation-system",
+                                                  "icon":  "film"
+                                              },
+                                              {
+                                                  "id":  "death-system",
+                                                  "label":  "Death System",
+                                                  "path":  "gameplay-design/specific-systems/supporting-systems/death-system",
+                                                  "icon":  "heart-crack"
+                                              },
+                                              {
+                                                  "id":  "sys-home",
+                                                  "label":  "Home System",
+                                                  "path":  "gameplay-design/specific-systems/supporting-systems/home-system",
+                                                  "icon":  "house"
+                                              },
+                                              {
+                                                  "id":  "map-system",
+                                                  "label":  "Map System",
+                                                  "path":  "gameplay-design/specific-systems/supporting-systems/map-system",
+                                                  "icon":  "map"
+                                              },
+                                              {
+                                                  "id":  "moving-system",
+                                                  "label":  "Moving System",
+                                                  "path":  "gameplay-design/specific-systems/supporting-systems/moving-system",
+                                                  "icon":  "arrows-up-down-left-right"
+                                              },
+                                              {
+                                                  "id":  "progression-system",
+                                                  "label":  "Progression System",
+                                                  "path":  "gameplay-design/specific-systems/supporting-systems/progression-system",
+                                                  "icon":  "chart-line"
+                                              },
+                                              {
+                                                  "id":  "randomness",
+                                                  "label":  "Randomness",
+                                                  "path":  "gameplay-design/specific-systems/supporting-systems/randomness",
+                                                  "icon":  "shuffle",
+                                                  "children":  [
+                                                                   {
+                                                                       "id":  "input-randomness",
+                                                                       "label":  "Input Randomness",
+                                                                       "path":  "gameplay-design/specific-systems/supporting-systems/randomness/input-randomness",
+                                                                       "icon":  "shuffle"
+                                                                   },
+                                                                   {
+                                                                       "id":  "output-randomness",
+                                                                       "label":  "Output Randomness",
+                                                                       "path":  "gameplay-design/specific-systems/supporting-systems/randomness/output-randomness",
+                                                                       "icon":  "dice"
+                                                                   }
+                                                               ]
+                                              },
+                                              {
+                                                  "id":  "bd-system",
+                                                  "label":  "BD System",
+                                                  "path":  "gameplay-design/specific-systems/supporting-systems/bd-system",
+                                                  "icon":  "layer-group"
+                                              }
+                                          ]
+                         }
+                     ]
+    },
+    {
+        "id":  "game-experience",
+        "label":  "Game Experience",
+        "path":  "game-experience",
+        "icon":  "eye",
+        "children":  [
+                         {
+                             "id":  "8-funs",
+                             "label":  "8 Funs",
+                             "path":  "game-experience/8-funs",
+                             "icon":  "far:face-laugh",
+                             "children":  [
+                                              {
+                                                  "id":  "sensation",
+                                                  "label":  "Sensation",
+                                                  "path":  "game-experience/8-funs/sensation",
+                                                  "icon":  "gem"
+                                              },
+                                              {
+                                                  "id":  "challenge",
+                                                  "label":  "Challenge",
+                                                  "path":  "game-experience/8-funs/challenge",
+                                                  "children":  [
+                                                                   {
+                                                                       "id":  "depth-of-gameplay",
+                                                                       "label":  "Depth of Gameplay",
+                                                                       "path":  "game-experience/8-funs/challenge/depth-of-gameplay"
+                                                                   },
+                                                                   {
+                                                                       "id":  "flavors-of-difficulty",
+                                                                       "label":  "Flavors of Difficulty",
+                                                                       "path":  "game-experience/8-funs/challenge/flavors-of-difficulty",
+                                                                       "children":  [
+                                                                                        {
+                                                                                            "id":  "reasoning",
+                                                                                            "label":  "Reasoning",
+                                                                                            "path":  "game-experience/8-funs/challenge/flavors-of-difficulty/reasoning"
+                                                                                        },
+                                                                                        {
+                                                                                            "id":  "physical",
+                                                                                            "label":  "Physical",
+                                                                                            "path":  "game-experience/8-funs/challenge/flavors-of-difficulty/physical"
+                                                                                        }
+                                                                                    ]
+                                                                   },
+                                                                   {
+                                                                       "id":  "how-difficult",
+                                                                       "label":  "How Difficult",
+                                                                       "path":  "game-experience/8-funs/challenge/how-difficult",
+                                                                       "children":  [
+                                                                                        {
+                                                                                            "id":  "how-our-brain-works",
+                                                                                            "label":  "How our Brain Works",
+                                                                                            "path":  "game-experience/8-funs/challenge/how-difficult/how-our-brain-works"
+                                                                                        },
+                                                                                        {
+                                                                                            "id":  "control-difficulty",
+                                                                                            "label":  "Control Difficulty",
+                                                                                            "path":  "game-experience/8-funs/challenge/how-difficult/control-difficulty"
+                                                                                        }
+                                                                                    ]
+                                                                   }
+                                                               ],
+                                                  "icon":  "hand-fist"
+                                              },
+                                              {
+                                                  "id":  "discovery",
+                                                  "label":  "Discovery",
+                                                  "path":  "game-experience/8-funs/discovery",
+                                                  "children":  [
+                                                                   {
+                                                                       "id":  "curiosity",
+                                                                       "label":  "Curiosity",
+                                                                       "path":  "game-experience/8-funs/discovery/curiosity",
+                                                                       "children":  [
+                                                                                        {
+                                                                                            "id":  "building-curiosity",
+                                                                                            "label":  "Building Curiosity",
+                                                                                            "path":  "game-experience/8-funs/discovery/curiosity/building-curiosity"
+                                                                                        },
+                                                                                        {
+                                                                                            "id":  "objects-of-curiosity",
+                                                                                            "label":  "Objects of Curiosity",
+                                                                                            "path":  "game-experience/8-funs/discovery/curiosity/objects-of-curiosity"
+                                                                                        },
+                                                                                        {
+                                                                                            "id":  "rewarding-exploration",
+                                                                                            "label":  "Rewarding Exploration",
+                                                                                            "path":  "game-experience/8-funs/discovery/curiosity/rewarding-exploration"
+                                                                                        },
+                                                                                        {
+                                                                                            "id":  "extra-content",
+                                                                                            "label":  "Extra Content",
+                                                                                            "path":  "game-experience/8-funs/discovery/curiosity/extra-content"
+                                                                                        }
+                                                                                    ]
+                                                                   },
+                                                                   {
+                                                                       "id":  "the-eureka-moment",
+                                                                       "label":  "The Eureka Moment",
+                                                                       "path":  "game-experience/8-funs/discovery/the-eureka-moment"
+                                                                   }
+                                                               ],
+                                                  "icon":  "cat"
+                                              },
+                                              {
+                                                  "id":  "expression",
+                                                  "label":  "Expression",
+                                                  "path":  "game-experience/8-funs/expression",
+                                                  "children":  [
+                                                                   {
+                                                                       "id":  "player-agency",
+                                                                       "label":  "Player Agency",
+                                                                       "path":  "game-experience/8-funs/expression/player-agency"
+                                                                   }
+                                                               ],
+                                                  "icon":  "paintbrush"
+                                              },
+                                              {
+                                                  "id":  "submission",
+                                                  "label":  "Submission",
+                                                  "path":  "game-experience/8-funs/submission",
+                                                  "icon":  "sack-dollar"
+                                              }
+                                          ]
+                         },
+                         {
+                             "id":  "game-feel",
+                             "label":  "Game Feel",
+                             "path":  "game-experience/game-feel",
+                             "children":  [
+                                              {
+                                                  "id":  "readability",
+                                                  "label":  "Readability",
+                                                  "path":  "game-experience/game-feel/readability",
+                                                  "icon":  "glasses"
+                                              },
+                                              {
+                                                  "id":  "fluidity",
+                                                  "label":  "Fluidity",
+                                                  "path":  "game-experience/game-feel/fluidity",
+                                                  "children":  [
+                                                                   {
+                                                                       "id":  "input-and-controls",
+                                                                       "label":  "Input And Controls",
+                                                                       "path":  "game-experience/game-feel/fluidity/input-and-controls"
+                                                                   },
+                                                                   {
+                                                                       "id":  "time-scale",
+                                                                       "label":  "Time-scale",
+                                                                       "path":  "game-experience/game-feel/fluidity/time-scale"
+                                                                   }
+                                                               ],
+                                                  "icon":  "water"
+                                              },
+                                              {
+                                                  "id":  "juice-elements",
+                                                  "label":  "Juice Elements",
+                                                  "path":  "game-experience/game-feel/juice-elements",
+                                                  "icon":  "bolt"
+                                              }
+                                          ],
+                             "icon":  "bolt"
+                         },
+                         {
+                             "id":  "the-magic-circle",
+                             "label":  "The Magic Circle",
+                             "path":  "game-experience/the-magic-circle",
+                             "children":  [
+                                              {
+                                                  "id":  "expectation-management",
+                                                  "label":  "Expectation Management",
+                                                  "path":  "game-experience/the-magic-circle/expectation-management",
+                                                  "icon":  "sliders"
+                                              },
+                                              {
+                                                  "id":  "feedback-loops",
+                                                  "label":  "Feedback Loops",
+                                                  "path":  "game-experience/the-magic-circle/feedback-loops",
+                                                  "icon":  "bars-progress"
+                                              },
+                                              {
+                                                  "id":  "flow-state",
+                                                  "label":  "Flow State",
+                                                  "path":  "game-experience/the-magic-circle/flow-state",
+                                                  "children":  [
+                                                                   {
+                                                                       "id":  "match-difficulty-with-player-growth",
+                                                                       "label":  "Match Difficulty with Player Growth",
+                                                                       "path":  "game-experience/the-magic-circle/flow-state/match-difficulty-with-player-growth",
+                                                                       "children":  [
+                                                                                        {
+                                                                                            "id":  "player-progression",
+                                                                                            "label":  "Player Progression",
+                                                                                            "path":  "game-experience/the-magic-circle/flow-state/match-difficulty-with-player-growth/player-progression"
+                                                                                        }
+                                                                                    ]
+                                                                   }
+                                                               ],
+                                                  "icon":  "water"
+                                              }
+                                          ],
+                             "icon":  "bullseye"
+                         },
+                         {
+                             "id":  "negative-experience",
+                             "label":  "Negative Experience",
+                             "path":  "game-experience/negative-experience",
+                             "icon":  "far:face-frown"
+                         },
+                         {
+                             "id":  "other-experience",
+                             "label":  "Other Experience",
+                             "path":  "game-experience/other-experience",
+                             "children":  [
+                                              {
+                                                  "id":  "horror-and-discomfort",
+                                                  "label":  "Horror And Discomfort",
+                                                  "path":  "game-experience/other-experience/horror-and-discomfort",
+                                                  "children":  [
+                                                                   {
+                                                                       "id":  "types-of-fear",
+                                                                       "label":  "Types of Fear",
+                                                                       "path":  "game-experience/other-experience/horror-and-discomfort/types-of-fear"
+                                                                   },
+                                                                   {
+                                                                       "id":  "creating-unease",
+                                                                       "label":  "Creating Unease",
+                                                                       "path":  "game-experience/other-experience/horror-and-discomfort/creating-unease",
+                                                                       "children":  [
+                                                                                        {
+                                                                                            "id":  "uncanny-valley",
+                                                                                            "label":  "Uncanny Valley",
+                                                                                            "path":  "game-experience/other-experience/horror-and-discomfort/creating-unease/uncanny-valley"
+                                                                                        },
+                                                                                        {
+                                                                                            "id":  "unknown",
+                                                                                            "label":  "Unknown",
+                                                                                            "path":  "game-experience/other-experience/horror-and-discomfort/creating-unease/unknown"
+                                                                                        }
+                                                                                    ]
+                                                                   }
+                                                               ],
+                                                  "icon":  "ghost"
+                                              }
+                                          ],
+                             "icon":  "star"
+                         }
+                     ]
+    },
+    {
+        "id":  "game-development",
+        "label":  "Game Development",
+        "path":  "game-development",
+        "children":  [
+                         {
+                             "id":  "structure",
+                             "label":  "Structure",
+                             "path":  "game-development/structure",
+                             "icon":  "folder-tree"
+                         },
+                         {
+                             "id":  "bug-handling",
+                             "label":  "Bug Handling",
+                             "path":  "game-development/bug-handling",
+                             "icon":  "fas:bug"
+                         }
+                     ]
+    },
+    {
+        "id":  "level-design",
+        "label":  "Level Design",
+        "path":  "level-design",
+        "icon":  "map-location-dot",
+        "children":  [
+                         {
+                             "id":  "design-process",
+                             "label":  "Design Process",
+                             "path":  "level-design/design-process",
+                             "children":  [
+                                              {
+                                                  "id":  "plan",
+                                                  "label":  "Plan",
+                                                  "path":  "level-design/design-process/plan",
+                                                  "icon":  "clipboard-list"
+                                              },
+                                              {
+                                                  "id":  "sketch",
+                                                  "label":  "Sketch",
+                                                  "path":  "level-design/design-process/sketch",
+                                                  "icon":  "pencil"
+                                              },
+                                              {
+                                                  "id":  "blockout",
+                                                  "label":  "Blockout",
+                                                  "path":  "level-design/design-process/blockout",
+                                                  "icon":  "cube"
+                                              },
+                                              {
+                                                  "id":  "review",
+                                                  "label":  "Review",
+                                                  "path":  "level-design/design-process/review",
+                                                  "icon":  "clipboard-check"
+                                              }
+                                          ],
+                             "icon":  "bars-progress"
+                         },
+                         {
+                             "id":  "guidance",
+                             "label":  "Guidance",
+                             "path":  "level-design/guidance",
+                             "children":  [
+                                              {
+                                                  "id":  "macro-guidance",
+                                                  "label":  "Macro Guidance",
+                                                  "path":  "level-design/guidance/macro-guidance",
+                                                  "icon":  "compass"
+                                              },
+                                              {
+                                                  "id":  "micro-guidance",
+                                                  "label":  "Micro Guidance",
+                                                  "path":  "level-design/guidance/micro-guidance",
+                                                  "icon":  "eye"
+                                              },
+                                              {
+                                                  "id":  "tutorial-levels",
+                                                  "label":  "Tutorial Levels",
+                                                  "path":  "level-design/guidance/tutorial-levels",
+                                                  "icon":  "graduation-cap"
+                                              }
+                                          ],
+                             "icon":  "signs-post"
+                         },
+                         {
+                             "id":  "layout",
+                             "label":  "Layout",
+                             "path":  "level-design/layout",
+                             "children":  [
+                                              {
+                                                  "id":  "level-components",
+                                                  "label":  "Level Components",
+                                                  "path":  "level-design/layout/level-components",
+                                                  "children":  [
+                                                                   {
+                                                                       "id":  "level-elements",
+                                                                       "label":  "Level Elements",
+                                                                       "path":  "level-design/layout/level-components/level-elements"
+                                                                   },
+                                                                   {
+                                                                       "id":  "layout-patterns",
+                                                                       "label":  "Layout Patterns",
+                                                                       "path":  "level-design/layout/level-components/layout-patterns",
+                                                                       "children":  [
+                                                                                        {
+                                                                                            "id":  "functional-patterns",
+                                                                                            "label":  "Functional Patterns",
+                                                                                            "path":  "level-design/layout/level-components/layout-patterns/functional-patterns"
+                                                                                        }
+                                                                                    ]
+                                                                   }
+                                                               ],
+                                                  "icon":  "cubes"
+                                              },
+                                              {
+                                                  "id":  "cognitive-map",
+                                                  "label":  "Cognitive Map",
+                                                  "path":  "level-design/layout/cognitive-map",
+                                                  "children":  [
+                                                                   {
+                                                                       "id":  "coginitive-map-elements",
+                                                                       "label":  "Coginitive Map Elements",
+                                                                       "path":  "level-design/layout/cognitive-map/coginitive-map-elements"
+                                                                   },
+                                                                   {
+                                                                       "id":  "waytracking-disruptions",
+                                                                       "label":  "Waytracking Disruptions",
+                                                                       "path":  "level-design/layout/cognitive-map/waytracking-disruptions"
+                                                                   }
+                                                               ],
+                                                  "icon":  "map"
+                                              },
+                                              {
+                                                  "id":  "map-hierarchy",
+                                                  "label":  "Map Hierarchy",
+                                                  "path":  "level-design/layout/map-hierarchy",
+                                                  "icon":  "sitemap"
+                                              },
+                                              {
+                                                  "id":  "verticality",
+                                                  "label":  "Verticality",
+                                                  "path":  "level-design/layout/verticality",
+                                                  "children":  [
+                                                                   {
+                                                                       "id":  "stairs",
+                                                                       "label":  "Stairs",
+                                                                       "path":  "level-design/layout/verticality/stairs"
+                                                                   }
+                                                               ],
+                                                  "icon":  "arrows-up-down"
+                                              }
+                                          ],
+                             "icon":  "table-cells-large"
+                         },
+                         {
+                             "id":  "pacing",
+                             "label":  "Pacing",
+                             "path":  "level-design/pacing",
+                             "children":  [
+                                              {
+                                                  "id":  "circulation",
+                                                  "label":  "Circulation",
+                                                  "path":  "level-design/pacing/circulation",
+                                                  "children":  [
+                                                                   {
+                                                                       "id":  "circulation-elements",
+                                                                       "label":  "Circulation Elements",
+                                                                       "path":  "level-design/pacing/circulation/circulation-elements"
+                                                                   },
+                                                                   {
+                                                                       "id":  "circulation-patterns",
+                                                                       "label":  "Circulation Patterns",
+                                                                       "path":  "level-design/pacing/circulation/circulation-patterns"
+                                                                   },
+                                                                   {
+                                                                       "id":  "pace-control",
+                                                                       "label":  "Pace Control",
+                                                                       "path":  "level-design/pacing/circulation/pace-control",
+                                                                       "children":  [
+                                                                                        {
+                                                                                            "id":  "psychology",
+                                                                                            "label":  "Psychology",
+                                                                                            "path":  "level-design/pacing/circulation/pace-control/psychology"
+                                                                                        }
+                                                                                    ]
+                                                                   }
+                                                               ],
+                                                  "icon":  "route"
+                                              },
+                                              {
+                                                  "id":  "game-beat",
+                                                  "label":  "Game Beat",
+                                                  "path":  "level-design/pacing/game-beat",
+                                                  "children":  [
+                                                                   {
+                                                                       "id":  "common-beat-elements",
+                                                                       "label":  "Common Beat Elements",
+                                                                       "path":  "level-design/pacing/game-beat/common-beat-elements"
+                                                                   },
+                                                                   {
+                                                                       "id":  "design-beat-by-need",
+                                                                       "label":  "Design Beat by Need",
+                                                                       "path":  "level-design/pacing/game-beat/design-beat-by-need"
+                                                                   },
+                                                                   {
+                                                                       "id":  "game-beat-examples",
+                                                                       "label":  "Game Beat Examples",
+                                                                       "path":  "level-design/pacing/game-beat/game-beat-examples"
+                                                                   },
+                                                                   {
+                                                                       "id":  "open-world",
+                                                                       "label":  "Open world",
+                                                                       "path":  "level-design/pacing/game-beat/open-world"
+                                                                   }
+                                                               ],
+                                                  "icon":  "chart-line"
+                                              }
+                                          ],
+                             "icon":  "gauge-high"
+                         },
+                         {
+                             "id":  "puzzle-design",
+                             "label":  "Puzzle Design",
+                             "path":  "level-design/puzzle-design",
+                             "icon":  "puzzle-piece"
+                         },
+                         {
+                             "id":  "reward-and-exploration",
+                             "label":  "Reward And Exploration",
+                             "path":  "level-design/reward-and-exploration",
+                             "children":  [
+                                              {
+                                                  "id":  "lock-and-key",
+                                                  "label":  "Lock And Key",
+                                                  "path":  "level-design/reward-and-exploration/lock-and-key",
+                                                  "icon":  "key"
+                                              },
+                                              {
+                                                  "id":  "rewards",
+                                                  "label":  "Rewards",
+                                                  "path":  "level-design/reward-and-exploration/rewards",
+                                                  "icon":  "gift",
+                                                  "children":  [
+                                                                   {
+                                                                       "id":  "how-to-display-rewards",
+                                                                       "label":  "How to display rewards",
+                                                                       "path":  "level-design/reward-and-exploration/rewards/how-to-display-rewards"
+                                                                   }
+                                                               ]
+                                              }
+                                          ],
+                             "icon":  "gem"
+                         }
+                     ]
+    },
+    {
+        "id":  "narrative-design",
+        "label":  "Narrative Design",
+        "path":  "narrative-design",
+        "icon":  "book-open-reader",
+        "children":  [
+                         {
+                             "id":  "moral",
+                             "label":  "Moral",
+                             "path":  "narrative-design/moral",
+                             "children":  [
+                                              {
+                                                  "id":  "descrimination",
+                                                  "label":  "Descrimination",
+                                                  "path":  "narrative-design/moral/descrimination",
+                                                  "icon":  "user-slash"
+                                              },
+                                              {
+                                                  "id":  "violence",
+                                                  "label":  "Violence",
+                                                  "path":  "narrative-design/moral/violence",
+                                                  "icon":  "hand-fist"
+                                              }
+                                          ],
+                             "icon":  "scale-balanced"
+                         },
+                         {
+                             "id":  "narrative-structure",
+                             "label":  "Narrative Structure",
+                             "path":  "narrative-design/narrative-structure",
+                             "children":  [
+                                              {
+                                                  "id":  "narrative-elements",
+                                                  "label":  "Narrative Elements",
+                                                  "path":  "narrative-design/narrative-structure/narrative-elements",
+                                                  "icon":  "puzzle-piece"
+                                              },
+                                              {
+                                                  "id":  "narrative-patterns",
+                                                  "label":  "Narrative Patterns",
+                                                  "path":  "narrative-design/narrative-structure/narrative-patterns",
+                                                  "children":  [
+                                                                   {
+                                                                       "id":  "emergent-narrative",
+                                                                       "label":  "Emergent Narrative",
+                                                                       "path":  "narrative-design/narrative-structure/narrative-patterns/emergent-narrative"
+                                                                   },
+                                                                   {
+                                                                       "id":  "fragmented-narrative",
+                                                                       "label":  "Fragmented Narrative",
+                                                                       "path":  "narrative-design/narrative-structure/narrative-patterns/fragmented-narrative"
+                                                                   },
+                                                                   {
+                                                                       "id":  "linear-narrative",
+                                                                       "label":  "Linear Narrative",
+                                                                       "path":  "narrative-design/narrative-structure/narrative-patterns/linear-narrative"
+                                                                   },
+                                                                   {
+                                                                       "id":  "multi-thread-narrative",
+                                                                       "label":  "Multi-thread Narrative",
+                                                                       "path":  "narrative-design/narrative-structure/narrative-patterns/multi-thread-narrative",
+                                                                       "children":  [
+                                                                                        {
+                                                                                            "id":  "branching-structures",
+                                                                                            "label":  "Branching Structures",
+                                                                                            "path":  "narrative-design/narrative-structure/narrative-patterns/multi-thread-narrative/branching-structures"
+                                                                                        }
+                                                                                    ]
+                                                                   }
+                                                               ],
+                                                  "icon":  "layer-group"
+                                              },
+                                              {
+                                                  "id":  "narrative-timing",
+                                                  "label":  "Narrative Timing",
+                                                  "path":  "narrative-design/narrative-structure/narrative-timing",
+                                                  "icon":  "clock"
+                                              },
+                                              {
+                                                  "id":  "suspense",
+                                                  "label":  "Suspense",
+                                                  "path":  "narrative-design/narrative-structure/suspense",
+                                                  "icon":  "hourglass-half"
+                                              }
+                                          ],
+                             "icon":  "diagram-project"
+                         },
+                         {
+                             "id":  "player-and-character",
+                             "label":  "Player And Character",
+                             "path":  "narrative-design/player-and-character",
+                             "children":  [
+                                              {
+                                                  "id":  "character-design",
+                                                  "label":  "Character Design",
+                                                  "path":  "narrative-design/player-and-character/character-design",
+                                                  "children":  [
+                                                                   {
+                                                                       "id":  "emotional-link",
+                                                                       "label":  "Emotional Link",
+                                                                       "path":  "narrative-design/player-and-character/character-design/emotional-link"
+                                                                   },
+                                                                   {
+                                                                       "id":  "grounded-characters",
+                                                                       "label":  "Grounded Characters",
+                                                                       "path":  "narrative-design/player-and-character/character-design/grounded-characters",
+                                                                       "children":  [
+                                                                                        {
+                                                                                            "id":  "dialogue",
+                                                                                            "label":  "Dialogue",
+                                                                                            "path":  "narrative-design/player-and-character/character-design/grounded-characters/dialogue",
+                                                                                            "children":  [
+                                                                                                             {
+                                                                                                                 "id":  "character-through-dialogue",
+                                                                                                                 "label":  "Character Through Dialogue",
+                                                                                                                 "path":  "narrative-design/player-and-character/character-design/grounded-characters/dialogue/character-through-dialogue"
+                                                                                                             },
+                                                                                                             {
+                                                                                                                 "id":  "exposition-through-dialogue",
+                                                                                                                 "label":  "Exposition Through Dialogue",
+                                                                                                                 "path":  "narrative-design/player-and-character/character-design/grounded-characters/dialogue/exposition-through-dialogue"
+                                                                                                             }
+                                                                                                         ]
+                                                                                        }
+                                                                                    ]
+                                                                   },
+                                                                   {
+                                                                       "id":  "protagonist-tone",
+                                                                       "label":  "Protagonist Tone",
+                                                                       "path":  "narrative-design/player-and-character/character-design/protagonist-tone"
+                                                                   }
+                                                               ],
+                                                  "icon":  "id-card"
+                                              }
+                                          ],
+                             "icon":  "user"
+                         },
+                         {
+                             "id":  "narrative-design-world-building",
+                             "label":  "World Building",
+                             "path":  "narrative-design/world-building",
+                             "children":  [
+                                              {
+                                                  "id":  "world-building-level-design",
+                                                  "label":  "Level Design",
+                                                  "path":  "narrative-design/world-building/level-design",
+                                                  "icon":  "route"
+                                              },
+                                              {
+                                                  "id":  "where-to-start",
+                                                  "label":  "Where to Start",
+                                                  "path":  "narrative-design/world-building/where-to-start",
+                                                  "icon":  "seedling"
+                                              },
+                                              {
+                                                  "id":  "world-authenticity",
+                                                  "label":  "World Authenticity",
+                                                  "path":  "narrative-design/world-building/world-authenticity",
+                                                  "icon":  "link"
+                                              }
+                                          ],
+                             "icon":  "earth-asia"
+                         }
+                     ]
+    },
+    {
+        "id":  "appendix",
+        "label":  "Appendix",
+        "path":  "appendix",
+        "icon":  "book-open",
+        "children":  [
+                         {
+                             "id":  "books-to-read",
+                             "label":  "Books to Read",
+                             "path":  "appendix/books-to-read",
+                             "icon":  "book-open"
+                         },
+                         {
+                             "id":  "tools",
+                             "label":  "Tools",
+                             "path":  "appendix/tools",
+                             "icon":  "screwdriver-wrench"
+                         }
+                     ]
+    }
 ]

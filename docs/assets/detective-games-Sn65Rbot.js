@@ -1,0 +1,1 @@
+import{C as e,_ as t,l as n,n as r,x as i}from"./index-CR4_ZIoM.js";e();var a=i();function o({go:e}){return(0,a.jsxs)(`div`,{children:[(0,a.jsx)(r,{auto:!0,go:e}),(0,a.jsx)(n,{children:`Detective Games`}),(0,a.jsx)(t,{children:`Clue-driven, tests information integration and inference`})]})}export{o as default};
