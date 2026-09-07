@@ -18,10 +18,12 @@ export default function Page({ go }) {
       <UL>
         <LI>Predict player movement</LI>
       </UL>
-      <Blockquote>E.g. Breath of the Wild: approach village → activate shrine→ ...</Blockquote>
+      <Blockquote>E.g. Breath of the Wild: approach village → activate shrine → ...</Blockquote>
       <H2 id="checklist-open-world">Checklist Open World</H2>
       <P>If the core gameplay is strong enough, a checklist-driven open world becomes an efficient format that allows players to explore the gameplay in their own pacing.</P>
       <Blockquote>E.g. Racing games, Rise of the Rōnin — the checklist structure works when combat itself is the reward</Blockquote>
+      <H2 id="extraction-map-pacing">Extraction Map Pacing</H2>
+      <P>Extraction maps suffer most when every part of the rhythm is flat: rewards feel equally valuable, combat has the same intensity everywhere, and routes offer no meaningful variation. Without peaks and valleys, players quickly become bored.</P>
     </div>
   );
 }

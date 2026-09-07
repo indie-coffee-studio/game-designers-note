@@ -5,7 +5,7 @@ export default function Page({ go }) {
   return (
     <div>
       <Breadcrumb auto go={go} />
-      <H1>Tactic System</H1>
+      <H1>Tactic Games</H1>
       <H2 id="prioritize-tactics">Prioritize Tactics</H2>
       <Blockquote>Shadow Tactics and Desperados are still called RTT, but the adding of pause decrease the reaction demand so players can focus more decision-making. Personally, it's a right trade.</Blockquote>
       <H2 id="role-differentiation">Role Differentiation Creates Strategy</H2>
@@ -20,7 +20,7 @@ export default function Page({ go }) {
       <P>From a threat-management perspective, threats should not fundamentally restrict movement. They should give players a reason to actively move toward a particular position.</P>
       <P>Positioning becomes strategic when the player must decide which threat to answer, where to answer it, and what opportunity is created by committing to that location.</P>
       <H2 id="durable-mechanisms">Discover Durable Mechanisms</H2>
-      <Callout type="info">When exploring outside the expected path, designers can recognize why certain mechanisms remain effective across many games. </Callout>
+      <Callout type="info">When exploring outside the expected path, designers can recognize why certain mechanisms remain effective across many games.</Callout>
     </div>
   );
 }

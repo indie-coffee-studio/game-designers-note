@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './EditorToolbar.module.css';
+import { InternalLinkPicker } from './InternalLinkPicker.jsx';
 
 const ToolBtn = ({ active, title, onClick, children }) => (
   <button
@@ -36,6 +37,7 @@ export function EditorToolbar({ editor, onInsertFigure }) {
   // Force re-render when cursor moves so isActive() reflects current position
   const [, forceUpdate] = useState(0);
   const [linkAnchor, setLinkAnchor] = useState(null);
+  const [internalPickerAnchor, setInternalPickerAnchor] = useState(null);
 
   useEffect(() => {
     if (!editor) return;
@@ -72,10 +74,7 @@ export function EditorToolbar({ editor, onInsertFigure }) {
   };
 
   const handleInternal = () => {
-    const id = window.prompt('Page ID (optionally with #anchor)', editor.getAttributes('internalLink').id ?? '');
-    if (id === null) { setLinkAnchor(null); return; }
-    if (id === '') chain().unsetMark('internalLink').run();
-    else chain().setMark('internalLink', { id }).run();
+    setInternalPickerAnchor(linkAnchor);
     setLinkAnchor(null);
   };
 
@@ -138,6 +137,18 @@ export function EditorToolbar({ editor, onInsertFigure }) {
       <ToolBtn title="Undo" onClick={() => chain().undo().run()}>Undo</ToolBtn>
       <ToolBtn title="Redo" onClick={() => chain().redo().run()}>Redo</ToolBtn>
 
+      {internalPickerAnchor && (
+        <InternalLinkPicker
+          anchor={internalPickerAnchor}
+          initialValue={editor.getAttributes('internalLink').id ?? ''}
+          onSelect={(id) => {
+            if (id) chain().setMark('internalLink', { id }).run();
+            else chain().unsetMark('internalLink').run();
+            setInternalPickerAnchor(null);
+          }}
+          onClose={() => setInternalPickerAnchor(null)}
+        />
+      )}
       {linkAnchor && (
         <LinkTypePopup
           anchor={linkAnchor}

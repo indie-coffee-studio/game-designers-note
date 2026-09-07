@@ -73,3 +73,168 @@
 }
 
 .linkPopup button:hover { background: #f0ede8; }
+
+.internalPicker {
+  position: fixed;
+  z-index: 101;
+  width: min(360px, calc(100vw - 24px));
+  max-height: min(520px, calc(100vh - 24px));
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #e0ddd8;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.16);
+}
+
+.pickerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #333;
+  font-size: 13px;
+}
+
+.pickerHeader button {
+  border: none;
+  background: transparent;
+  color: #777;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.pickerSearch {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 7px 9px;
+  border: 1px solid #d8d3cc;
+  border-radius: 5px;
+  color: #333;
+  font-size: 13px;
+  outline: none;
+}
+
+.pickerSearch:focus {
+  border-color: #999;
+}
+
+.pickerBreadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3px;
+  color: #777;
+  font-size: 11px;
+}
+
+.pickerBreadcrumb button {
+  border: none;
+  padding: 2px 3px;
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+.pickerBreadcrumb button:hover {
+  color: #222;
+  text-decoration: underline;
+}
+
+.pickerSeparator {
+  margin: 0 2px;
+  color: #aaa;
+}
+
+.pickerList {
+  min-height: 80px;
+  overflow-y: auto;
+  border-top: 1px solid #eee;
+  padding-top: 4px;
+}
+
+.pickerItem,
+.pageTarget {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 9px;
+  background: transparent;
+  color: #333;
+  cursor: pointer;
+  font-size: 13px;
+  text-align: left;
+}
+
+
+.pickerName {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border: none;
+  padding: 0;
+  background: transparent;
+  color: #333;
+  cursor: pointer;
+  font-size: 13px;
+  text-align: left;
+}
+
+.pickerLink {
+  flex: 0 0 auto;
+  border: 1px solid #d8d3cc;
+  border-radius: 4px;
+  padding: 3px 7px;
+  background: #fff;
+  color: #666;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.pickerLink:hover {
+  border-color: #999;
+  color: #222;
+}
+.pickerItem:hover,
+.pageTarget:hover {
+  background: #f0ede8;
+}
+
+.pageTarget {
+  margin-bottom: 4px;
+  background: #f7f4ef;
+  font-weight: 600;
+}
+
+.pickerArrow {
+  color: #999;
+  font-size: 17px;
+}
+
+.headingLevel {
+  flex: 0 0 24px;
+  color: #999;
+  font-size: 10px;
+}
+
+.pickerStatus {
+  padding: 12px 9px;
+  color: #888;
+  font-size: 12px;
+}
+
+.pickerError {
+  padding: 8px 9px;
+  color: #b33;
+  font-size: 12px;
+}

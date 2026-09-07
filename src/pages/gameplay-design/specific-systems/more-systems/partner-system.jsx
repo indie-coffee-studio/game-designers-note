@@ -18,6 +18,18 @@ export default function Page({ go }) {
       <UL>
         <LI>Relieve loneliness</LI>
       </UL>
+      <H2 id="combat-presence">Combat</H2>
+      <UL>
+        <LI>Automatically release skills during combat.</LI>
+        <LI>Taunt enemies, plant mines, or apply status effects.</LI>
+        <LI>Special combat resource for partners.</LI>
+        <LI>Command partners.</LI>
+      </UL>
+      <H2 id="exploration-assistance">Exploration Assistance</H2>
+      <UL>
+        <LI>Reveal nearby interactive elements.</LI>
+        <LI>Detect ambushing enemies.</LI>
+      </UL>
       <H2 id="separation-scenarios">Separation scenarios</H2>
       <UL>
         <LI>Restrict player ability</LI>
@@ -25,12 +37,10 @@ export default function Page({ go }) {
         <LI>Reflect character growth</LI>
         <LI>Embody the need for each other</LI>
         <LI>Demonstrate difference in opinion</LI>
-        <LI>Character death
-          <UL>
+        <LI>Character death            <UL>
             <LI>Shatter something beautiful</LI>
             <LI>Leave suspense if the death not confirmed</LI>
-          </UL>
-        </LI>
+          </UL></LI>
       </UL>
     </div>
   );

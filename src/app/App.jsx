@@ -18,6 +18,7 @@ export default function App() {
   const rawPath = location.pathname;
   const normalizedPath = rawPath !== '/' && rawPath.endsWith('/') ? rawPath.slice(0, -1) : rawPath;
   const currentId = pathToId[normalizedPath] || 'home';
+  const editHref = import.meta.env.DEV ? '/editor/page/' + currentId : null;
   const [theme, setTheme] = useState('light');
   const [search, setSearch] = useState('');
   const [searchOpen, setSearchOpen] = useState(false);
@@ -141,6 +142,7 @@ export default function App() {
           theme={theme}
           setTheme={setTheme}
           searchRef={searchRef}
+          editHref={editHref}
         />
         <div className={homeStyles.homeRoot}>
           <div className={homeStyles.homeContent}>
@@ -174,6 +176,7 @@ export default function App() {
         theme={theme}
         setTheme={setTheme}
         searchRef={searchRef}
+        editHref={editHref}
       >
         <PageChromeProvider value={{ titleIconName, breadcrumbCrumbs }}>
           <Suspense><PageComponent go={go} /></Suspense>

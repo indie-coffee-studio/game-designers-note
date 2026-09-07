@@ -13,6 +13,7 @@ export function DocsHeader({
   theme,
   setTheme,
   searchRef,
+  editHref,
   hideMenu,
 }) {
   return (
@@ -67,6 +68,11 @@ export function DocsHeader({
             </div>
           )}
         </div>
+        {editHref && (
+          <a href={editHref} className={styles.editLink} target="_blank" rel="noreferrer">
+            Edit Page
+          </a>
+        )}
         <button type="button" className={styles.themeToggle} onClick={() => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))} aria-label="Toggle theme">
           <Icon name={theme === 'dark' ? 'fas:sun' : 'far:moon'} />
         </button>

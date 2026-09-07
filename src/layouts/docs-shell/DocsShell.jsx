@@ -38,6 +38,7 @@ export function DocsShell({
   theme,
   setTheme,
   searchRef,
+  editHref,
   children,
 }) {
   const readingRef = useRef(null);
@@ -84,6 +85,7 @@ export function DocsShell({
         theme={theme}
         setTheme={setTheme}
         searchRef={searchRef}
+        editHref={editHref}
       />
       <div className={styles.bodyRow}>
         {sidebarOpen && <div className={styles.overlayScrim} onClick={() => setSidebarOpen(false)} />}

@@ -1,1 +1,0 @@
-import{C as e,_ as t,l as n,x as r}from"./index-CR4_ZIoM.js";e();var i=r();function a(){return(0,i.jsxs)(`div`,{children:[(0,i.jsx)(n,{children:`Platformer`}),(0,i.jsx)(t,{style:{color:`var(--muted)`,fontSize:14},children:`Content to be filled.`})]})}export{a as default};
